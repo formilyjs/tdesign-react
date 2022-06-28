@@ -44,7 +44,7 @@ export default {
   links: [
     {
       rel: 'stylesheet',
-      href: 'https://unpkg.com/tdesign-react/dist/tdesign-react.css',
+      href: 'https://unpkg.com/tdesign-react/dist/tdesign.min.css',
     },
   ],
   styles: [
