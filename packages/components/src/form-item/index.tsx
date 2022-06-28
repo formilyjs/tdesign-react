@@ -229,7 +229,6 @@ export const BaseItem: React.FC<IFormItemProps> = ({ children, ...props }) => {
             display: 'flex',
           }}
           placement="top"
-          // align={{ offset: [0, 10] }}
           content={getOverflowTooltip()}
         >
           {labelChildren}
@@ -243,8 +242,12 @@ export const BaseItem: React.FC<IFormItemProps> = ({ children, ...props }) => {
     if (tooltip && tooltipLayout === 'icon' && !overflow) {
       return (
         <span className={`${prefixCls}-label-tooltip-icon`}>
-          <Tooltip placement="top" content={tooltip}>
-            {tooltipIcon}
+          <Tooltip style={{
+            display: 'flex',
+            alignItems: 'center'
+          }} placement="top" content={tooltip}>
+            <span>{tooltipIcon}</span>
+            {/* {tooltipIcon} */}
           </Tooltip>
         </span>
       )

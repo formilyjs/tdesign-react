@@ -226,6 +226,7 @@ export default () => {
           description="描述描述"
           x-decorator="FormItem"
           x-component="Input"
+          required
           x-decorator-props={{
             labelWidth: 300,
             tooltip: '提示提示',
