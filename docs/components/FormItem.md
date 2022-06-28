@@ -669,7 +669,7 @@ import {
   Switch,
   DateRangePicker,
 } from '@formily/tdesign-react'
-import { CheckCircleIcon } from 'tdesign-icons-react'
+import { CheckCircleIcon, LoadingIcon } from 'tdesign-icons-react'
 import { createForm } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/react'
 const Title = (props) => <h3>{props.text}</h3>
@@ -736,7 +736,7 @@ export default () => {
           description="description"
           x-decorator-props={{
             feedbackStatus: 'pending',
-            // feedbackIcon: <LoadingOutlined style={{ color: '#1890ff' }} />,
+            feedbackIcon: <LoadingIcon style={{ color: '#1890ff' }} />,
           }}
         />
 

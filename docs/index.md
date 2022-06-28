@@ -2,11 +2,13 @@
 title: Formily - 阿里巴巴统一前端表单解决方案
 order: 10
 hero:
-  title: Formily TdesignReact
+  title: Formily TDesign
   desc: 基于TDesign封装的优雅且易用的Formily2.x组件体系
   actions:
     - text: 主站文档
       link: //formilyjs.org
+    - text: TDesign文档
+      link: //tdesign.tencent.com/react/
     - text: 组件文档
       link: /components
 features:

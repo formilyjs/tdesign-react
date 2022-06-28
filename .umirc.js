@@ -8,14 +8,14 @@ export default {
     '//img.alicdn.com/imgextra/i3/O1CN01XtT3Tv1Wd1b5hNVKy_!!6000000002810-55-tps-360-360.svg',
   outputPath: './doc-site',
   locales: [
-    ['en-US', 'English'],
+    // ['en-US', 'English'],
     ['zh-CN', '中文'],
   ],
   navs: {
     'zh-CN': [
       {
         title: 'TDesign',
-        path: '/zh-CN/components',
+        path: '/components',
       },
       {
         title: '主站',
