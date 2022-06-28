@@ -224,6 +224,10 @@ export const BaseItem: React.FC<IFormItemProps> = ({ children, ...props }) => {
     if ((tooltipLayout === 'text' && tooltip) || overflow) {
       return (
         <Tooltip
+          style={{
+            width: '100%',
+            display: 'flex',
+          }}
           placement="top"
           // align={{ offset: [0, 10] }}
           content={getOverflowTooltip()}
