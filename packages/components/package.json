@@ -1,0 +1,58 @@
+{
+  "name": "@formily/tdesign-react",
+  "version": "1.0.0-alpha.0",
+  "license": "MIT",
+  "main": "lib",
+  "types": "lib/index.d.ts",
+  "engines": {
+    "npm": ">=3.0.0"
+  },
+  "module": "esm",
+  "umd:main": "dist/formily.tdesign-react.umd.production.js",
+  "unpkg": "dist/formily.tdesign-react.umd.production.js",
+  "jsdelivr": "dist/formily.tdesign-react.umd.production.js",
+  "jsnext:main": "esm",
+  "sideEffects": [
+    "dist/*",
+    "esm/*.js",
+    "lib/*.js",
+    "src/*.ts",
+    "*.less",
+    "*.scss",
+    "**/*/style.js"
+  ],
+  "scripts": {
+    "build": "formily-tpl build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/formilyjs/tdesign-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/formilyjs/tdesign-react/issues"
+  },
+  "homepage": "https://github.com/formilyjs/tdesign-react#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "moment": "^2.29.3",
+    "react": ">=16.8.0 || >=17.0.0",
+    "react-dom": ">=16.8.0",
+    "react-is": ">=16.8.0 || >=17.0.0",
+    "tdesign-icons-react": "^0.1.1",
+    "tdesign-react": "^0.36.0"
+  },
+  "dependencies": {
+    "@formily/core": "^2.1.7",
+    "@formily/react": "^2.1.7",
+    "@formily/reactive": "^2.1.7",
+    "@formily/reactive-react": "^2.1.7",
+    "@formily/shared": "^2.1.7",
+    "classnames": "^2.3.1",
+    "moment": "^2.29.3",
+    "react-sticky-box": "^1.0.2",
+    "tdesign-icons-react": "^0.1.1",
+    "tdesign-react": "^0.36.0"
+  }
+}
