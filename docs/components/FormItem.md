@@ -669,6 +669,7 @@ import {
   Switch,
   DateRangePicker,
 } from '@formily/tdesign-react'
+import { CheckCircleIcon } from 'tdesign-icons-react'
 import { createForm } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/react'
 const Title = (props) => <h3>{props.text}</h3>
@@ -724,7 +725,7 @@ export default () => {
           description="description"
           x-decorator-props={{
             feedbackStatus: 'success',
-            // feedbackIcon: <CheckCircleFilled style={{ color: '#52c41a' }} />,
+            feedbackIcon: <CheckCircleIcon style={{ color: '#52c41a' }} />,
           }}
         />
 
@@ -831,7 +832,7 @@ export default () => {
             x-component="Select"
             x-decorator-props={{
               feedbackStatus: 'success',
-              //   feedbackIcon: <CheckCircleFilled style={{ color: '#52c41a' }} />,
+              feedbackIcon: <CheckCircleIcon style={{ color: '#52c41a' }} />,
             }}
           />
 
@@ -841,7 +842,7 @@ export default () => {
             x-component="DatePicker"
             x-decorator-props={{
               feedbackStatus: 'success',
-              //   feedbackIcon: <CheckCircleFilled style={{ color: '#52c41a' }} />,
+              feedbackIcon: <CheckCircleIcon style={{ color: '#52c41a' }} />,
             }}
           />
           <SchemaField.String
@@ -850,7 +851,7 @@ export default () => {
             x-component="DateRangePicker"
             x-decorator-props={{
               feedbackStatus: 'success',
-              //   feedbackIcon: <CheckCircleFilled style={{ color: '#52c41a' }} />,
+              feedbackIcon: <CheckCircleIcon style={{ color: '#52c41a' }} />,
             }}
           />
           <SchemaField.String
@@ -862,7 +863,7 @@ export default () => {
             }}
             x-decorator-props={{
               feedbackStatus: 'success',
-              //   feedbackIcon: <CheckCircleFilled style={{ color: '#52c41a' }} />,
+              feedbackIcon: <CheckCircleIcon style={{ color: '#52c41a' }} />,
             }}
           />
           <SchemaField.String
@@ -874,7 +875,7 @@ export default () => {
             }}
             x-decorator-props={{
               feedbackStatus: 'success',
-              //   feedbackIcon: <CheckCircleFilled style={{ color: '#52c41a' }} />,
+              feedbackIcon: <CheckCircleIcon style={{ color: '#52c41a' }} />,
             }}
           />
           <SchemaField.String
@@ -883,7 +884,7 @@ export default () => {
             x-component="TimePicker"
             x-decorator-props={{
               feedbackStatus: 'success',
-              //   feedbackIcon: <CheckCircleFilled style={{ color: '#52c41a' }} />,
+              feedbackIcon: <CheckCircleIcon style={{ color: '#52c41a' }} />,
             }}
           />
           <SchemaField.String
@@ -892,7 +893,7 @@ export default () => {
             x-component="InputNumber"
             x-decorator-props={{
               feedbackStatus: 'success',
-              //   feedbackIcon: <CheckCircleFilled style={{ color: '#52c41a' }} />,
+              feedbackIcon: <CheckCircleIcon style={{ color: '#52c41a' }} />,
             }}
           />
 
@@ -902,7 +903,7 @@ export default () => {
             x-component="TreeSelect"
             x-decorator-props={{
               feedbackStatus: 'success',
-              //   feedbackIcon: <CheckCircleFilled style={{ color: '#52c41a' }} />,
+              feedbackIcon: <CheckCircleIcon style={{ color: '#52c41a' }} />,
             }}
           />
 
@@ -912,7 +913,7 @@ export default () => {
             x-component="Cascader"
             x-decorator-props={{
               feedbackStatus: 'success',
-              //   feedbackIcon: <CheckCircleFilled style={{ color: '#52c41a' }} />,
+              feedbackIcon: <CheckCircleIcon style={{ color: '#52c41a' }} />,
             }}
           />
         </SchemaField.Void>
