@@ -1,8 +1,8 @@
 import moment from 'moment'
 import { connect, mapProps, mapReadPretty } from '@formily/react'
 import {
-  DatePicker as TdDatePicker,
-  DatePickerProps as TdDatePickerProps,
+  DateRangePicker as TdDateRangePicker,
+  DateRangePickerProps as TdDateRangePickerProps,
 } from 'tdesign-react'
 
 import { PreviewText } from '../preview-text'
@@ -16,12 +16,12 @@ type DatePickerProps<DatePickerProps> = Exclude<
   onChange: (value: string | string[]) => void
 }
 
-type ComposedDatePicker = React.FC<TdDatePickerProps> & {
-  RangePicker?: React.FC<TdDatePickerProps>
+type ComposedDatePicker = React.FC<TdDateRangePickerProps> & {
+  RangePicker?: React.FC<TdDateRangePickerProps>
 }
 
 const mapDateFormat = function () {
-  const getDefaultFormat = (props: DatePickerProps<TdDatePickerProps>) => {
+  const getDefaultFormat = (props: DatePickerProps<TdDateRangePickerProps>) => {
     if (props['picker'] === 'month') {
       return 'YYYY-MM'
     } else if (props['picker'] === 'quarter') {
@@ -49,8 +49,8 @@ const mapDateFormat = function () {
   }
 }
 
-export const DatePicker: ComposedDatePicker = connect(
-  TdDatePicker,
+export const DateRangePicker: ComposedDatePicker = connect(
+  TdDateRangePicker,
   mapProps(mapDateFormat()),
   mapReadPretty(PreviewText.Input)
 )
@@ -61,4 +61,4 @@ export const DatePicker: ComposedDatePicker = connect(
 //   mapReadPretty(PreviewText.DateRangePicker)
 // )
 
-export default DatePicker
+export default DateRangePicker
