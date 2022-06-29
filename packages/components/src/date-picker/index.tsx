@@ -28,7 +28,12 @@ export const DatePicker: ComposedDatePicker = connect(
 
 DatePicker.RangePicker = connect(
   DateRangePicker,
-  mapProps(mapDateFormat()),
+  mapProps((props, field) => {
+    return {
+      ...props,
+      value: props.value ? props.value : [],
+    }
+  }),
   mapReadPretty(PreviewText.Input)
 )
 

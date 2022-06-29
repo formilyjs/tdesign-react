@@ -79,7 +79,7 @@ export default () => (
           showTime: true,
         }}
       />
-      <SchemaField.Array
+      <SchemaField.String
         name="range_week"
         title="周范围选择"
         x-decorator="FormItem"
@@ -313,6 +313,7 @@ export default () => (
     />
     <Field
       name="range_week"
+      type="array"
       title="周范围选择"
       decorator={[FormItem]}
       component={[
@@ -325,6 +326,7 @@ export default () => (
     <Field
       name="range_month"
       title="月范围选择"
+      type="array"
       decorator={[FormItem]}
       component={[
         DatePicker.RangePicker,
