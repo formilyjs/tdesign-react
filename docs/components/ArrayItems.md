@@ -84,10 +84,10 @@ export default () => {
                 x-decorator="FormItem"
                 x-component="ArrayItems.SortHandle"
               />
-              <SchemaField.String
+              <SchemaField.Array
                 x-decorator="FormItem"
                 required
-                title="日期"
+                title="日期1"
                 name="date"
                 x-component="DatePicker.RangePicker"
                 x-component-props={{
@@ -158,7 +158,7 @@ export default () => {
                 field.title = field.value?.input || field.title
               }}
             >
-              <SchemaField.String
+              <SchemaField.Array
                 x-decorator="FormItem"
                 required
                 title="日期"
@@ -282,7 +282,7 @@ const schema = {
                 'x-component': 'ArrayItems.SortHandle',
               },
               date: {
-                type: 'string',
+                type: 'array',
                 title: '日期',
                 'x-decorator': 'FormItem',
                 'x-component': 'DatePicker.RangePicker',
@@ -363,7 +363,7 @@ const schema = {
               '{{(field)=>field.title = field.value && field.value.input || field.title}}',
             properties: {
               date: {
-                type: 'string',
+                type: 'array',
                 title: '日期',
                 'x-decorator': 'FormItem',
                 'x-component': 'DatePicker.RangePicker',

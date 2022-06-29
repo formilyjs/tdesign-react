@@ -11,7 +11,6 @@ import {
   FormItem,
   FormButtonGroup,
   Submit,
-  DateRangePicker,
 } from '@formily/tdesign-react'
 import { createForm } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/react'
@@ -20,7 +19,6 @@ const SchemaField = createSchemaField({
   components: {
     TimePicker,
     FormItem,
-    DateRangePicker,
   },
 })
 
@@ -40,7 +38,7 @@ export default () => (
         name="[startTime,endTime]"
         title="时间范围"
         x-decorator="FormItem"
-        x-component="DateRangePicker"
+        x-component="TimePicker.RangePicker"
       />
     </SchemaField>
     <FormButtonGroup>
@@ -59,7 +57,6 @@ import {
   FormItem,
   FormButtonGroup,
   Submit,
-  DateRangePicker,
 } from '@formily/tdesign-react'
 import { createForm } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/react'
@@ -68,7 +65,6 @@ const SchemaField = createSchemaField({
   components: {
     TimePicker,
     FormItem,
-    DateRangePicker,
   },
 })
 
@@ -86,7 +82,7 @@ const schema = {
     '[startTime,endTime]': {
       title: '时间范围',
       'x-decorator': 'FormItem',
-      'x-component': 'DateRangePicker',
+      'x-component': 'TimePicker.RangePicker',
       type: 'string',
     },
   },
@@ -111,7 +107,6 @@ import {
   FormItem,
   FormButtonGroup,
   Submit,
-  DateRangePicker,
 } from '@formily/tdesign-react'
 import { createForm } from '@formily/core'
 import { FormProvider, Field } from '@formily/react'
@@ -130,7 +125,7 @@ export default () => (
       name="[startTime,endTime]"
       title="时间范围"
       decorator={[FormItem]}
-      component={[DateRangePicker]}
+      component={[TimePicker.RangePicker]}
     />
     <FormButtonGroup>
       <Submit onSubmit={console.log}>提交</Submit>

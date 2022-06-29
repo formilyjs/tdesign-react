@@ -665,7 +665,6 @@ import {
   FormLayout,
   InputNumber,
   Switch,
-  DateRangePicker,
 } from '@formily/tdesign-react'
 import { CheckCircleIcon, LoadingIcon } from 'tdesign-icons-react'
 import { createForm } from '@formily/core'
@@ -686,7 +685,6 @@ const SchemaField = createSchemaField({
     FormItem,
     Title,
     FormLayout,
-    DateRangePicker,
   },
 })
 
@@ -844,9 +842,9 @@ export default () => {
             }}
           />
           <SchemaField.String
-            title="DateRangePicker"
+            title="DatePicker.RangePicker"
             x-decorator="FormItem"
-            x-component="DateRangePicker"
+            x-component="DatePicker.RangePicker"
             x-decorator-props={{
               feedbackStatus: 'success',
               feedbackIcon: <CheckCircleIcon style={{ color: '#52c41a' }} />,
