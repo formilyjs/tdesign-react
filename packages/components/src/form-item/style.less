@@ -54,15 +54,15 @@
     display: block;
   }
 
-  .@{td-prefix}-checkbox-vertical+.@{td-prefix}-checkbox-vertical,
-  .@{td-prefix}-radio-vertical+.@{td-prefix}-radio-vertical {
+  .@{td-prefix}-checkbox-vertical + .@{td-prefix}-checkbox-vertical,
+  .@{td-prefix}-radio-vertical + .@{td-prefix}-radio-vertical {
     margin-left: 0;
   }
 
   .@{td-prefix}-input-number {
     width: 100%;
 
-    +.@{td-prefix}-form-text {
+    + .@{td-prefix}-form-text {
       margin-left: 8px;
     }
 
@@ -108,17 +108,17 @@
 }
 
 .@{form-item-cls}-label {
-  color: @heading-color;
+  color: var(--td-text-color-primary);
 }
 
 .@{form-item-cls}-label-align-left {
-  >.@{form-item-cls}-label {
+  > .@{form-item-cls}-label {
     justify-content: flex-start;
   }
 }
 
 .@{form-item-cls}-label-align-right {
-  >.@{form-item-cls}-label {
+  > .@{form-item-cls}-label {
     justify-content: flex-end;
   }
 }
@@ -197,7 +197,7 @@
   .@{form-item-cls}-extra {
     min-height: 22px;
     line-height: 22px;
-    color: @text-color-secondary;
+    color: var(--td-text-color-secondary);
   }
 }
 
@@ -228,7 +228,7 @@
     min-height: @height-sm - 2;
   }
 
-  .@{form-item-cls}-label>label {
+  .@{form-item-cls}-label > label {
     height: @height-sm - 2;
   }
 
@@ -253,7 +253,8 @@
     }
   }
 
-  .@{td-prefix}-select-single:not(.@{td-prefix}-select-customize-input) .@{td-prefix}-select-selector {
+  .@{td-prefix}-select-single:not(.@{td-prefix}-select-customize-input)
+    .@{td-prefix}-select-selector {
     padding: 0px 11px;
     height: @height-sm - 2;
     font-size: @font-size-sm;
@@ -280,7 +281,8 @@
     }
   }
 
-  .@{td-prefix}-select-multiple:not(.@{td-prefix}-select-customize-input) .@{td-prefix}-select-selector {
+  .@{td-prefix}-select-multiple:not(.@{td-prefix}-select-customize-input)
+    .@{td-prefix}-select-selector {
     padding: 0px 2px;
     height: @height-sm - 2;
     font-size: @font-size-sm;
@@ -404,7 +406,8 @@
     }
   }
 
-  .@{td-prefix}-select-single:not(.@{td-prefix}-select-customize-input) .@{td-prefix}-select-selector {
+  .@{td-prefix}-select-single:not(.@{td-prefix}-select-customize-input)
+    .@{td-prefix}-select-selector {
     padding: 0px 11px;
     height: @height-lg;
     font-size: @font-size-lg;
@@ -431,7 +434,8 @@
     }
   }
 
-  .@{td-prefix}-select-multiple:not(.@{td-prefix}-select-customize-input) .@{td-prefix}-select-selector {
+  .@{td-prefix}-select-multiple:not(.@{td-prefix}-select-customize-input)
+    .@{td-prefix}-select-selector {
     padding: 0px 2px;
     height: @height-lg - 2;
     font-size: @font-size-lg;
@@ -555,10 +559,10 @@
 }
 
 .@{form-item-cls}-fullness {
-  >.@{form-item-cls}-control {
-    >.@{form-item-cls}-control-content {
-      >.@{form-item-cls}-control-content-component {
-        >*:first-child {
+  > .@{form-item-cls}-control {
+    > .@{form-item-cls}-control-content {
+      > .@{form-item-cls}-control-content-component {
+        > *:first-child {
           width: 100%;
         }
       }
@@ -581,7 +585,6 @@
 }
 
 .@{form-item-cls}-bordered-none {
-
   .t-input,
   .t-range-input,
   .t-cascader {
@@ -599,7 +602,8 @@
   .@{td-prefix}-input-number,
   .@{td-prefix}-picker,
   .@{td-prefix}-cascader-picker:focus .@{td-prefix}-cascader-input,
-  .@{td-prefix}-select:not(.@{td-prefix}-select-customize-input) .@{td-prefix}-select-selector,
+  .@{td-prefix}-select:not(.@{td-prefix}-select-customize-input)
+    .@{td-prefix}-select-selector,
   .@{td-prefix}-input-affix-wrapper,
   .@{td-prefix}-input {
     border: none !important;
@@ -616,7 +620,6 @@
 
   &:hover {
     // .hover();
-    
   }
 }
 
@@ -632,7 +635,8 @@
   .@{td-prefix}-input-number,
   .@{td-prefix}-picker,
   .@{td-prefix}-cascader-picker:focus .@{td-prefix}-cascader-input,
-  .@{td-prefix}-select:not(.@{td-prefix}-select-customize-input) .@{td-prefix}-select-selector,
+  .@{td-prefix}-select:not(.@{td-prefix}-select-customize-input)
+    .@{td-prefix}-select-selector,
   .@{td-prefix}-input {
     // .active();
   }
@@ -649,23 +653,22 @@
 }
 
 .@{form-item-cls}-error {
-
   .@{td-prefix}-input {
-    border-color: @error-color  !important;
+    border-color: @error-color !important;
   }
 
   .@{td-prefix}-input,
   .@{td-prefix}-input:hover,
   .@{td-prefix}-textarea__inner,
   .@{td-prefix}-input:focus {
-    border-color: @error-color  !important;
+    border-color: @error-color !important;
     box-shadow: @error-box-shadow !important;
   }
 
   .@{td-prefix}-select:not(.@{td-prefix}-select-disabled):not(.@{td-prefix}-select-customize-input) {
     .@{td-prefix}-select-selector {
       background-color: @form-error-input-bg;
-      border-color: @error-color  !important;
+      border-color: @error-color !important;
     }
 
     &.@{td-prefix}-select-open .@{td-prefix}-select-selector,
@@ -704,19 +707,18 @@
 }
 
 .@{form-item-cls}-error-help {
-  color: @error-color  !important;
+  color: @error-color !important;
 }
 
 .@{form-item-cls}-warning-help {
-  color: @warning-color  !important;
+  color: @warning-color !important;
 }
 
 .@{form-item-cls}-success-help {
-  color: @success-color  !important;
+  color: @success-color !important;
 }
 
 .@{form-item-cls}-warning {
-
   .@{td-prefix}-select-selector,
   .@{td-prefix}-cascader-picker,
   .@{td-prefix}-picker,
@@ -725,7 +727,7 @@
   .@{td-prefix}-input-affix-wrapper,
   .@{td-prefix}-input-affix-wrapper,
   .@{td-prefix}-input {
-    border-color: @warning-color  !important;
+    border-color: @warning-color !important;
     box-shadow: @warning-box-shadow !important;
   }
 
@@ -737,13 +739,13 @@
   .@{td-prefix}-input-affix-wrapper,
   .@{td-prefix}-input-affix-wrapper:hover,
   .@{td-prefix}-input:hover {
-    border-color: @warning-color  !important;
+    border-color: @warning-color !important;
   }
 
   .@{td-prefix}-select:not(.@{td-prefix}-select-disabled):not(.@{td-prefix}-select-customize-input) {
     .@{td-prefix}-select-selector {
       background-color: @form-warning-input-bg;
-      border-color: @warning-color  !important;
+      border-color: @warning-color !important;
     }
 
     &.@{td-prefix}-select-open .@{td-prefix}-select-selector,
@@ -782,7 +784,6 @@
 }
 
 .@{form-item-cls}-success {
-
   .@{td-prefix}-select-selector,
   .@{td-prefix}-cascader-picker,
   .@{td-prefix}-picker,
@@ -791,7 +792,7 @@
   .@{td-prefix}-input-affix-wrapper,
   .@{td-prefix}-input-affix-wrapper,
   .@{td-prefix}-input {
-    border-color: @success-color  !important;
+    border-color: @success-color !important;
   }
 
   .@{td-prefix}-select-selector,
@@ -802,14 +803,14 @@
   .@{td-prefix}-input-affix-wrapper,
   .@{td-prefix}-input-affix-wrapper:hover,
   .@{td-prefix}-input:hover {
-    border-color: @success-color  !important;
+    border-color: @success-color !important;
   }
 
   .@{td-prefix}-input-affix-wrapper-focused,
   .@{td-prefix}-input-affix-wrapper:focus,
   .@{td-prefix}-input-focused,
   .@{td-prefix}-input:focus {
-    border-color: @success-color  !important;
+    border-color: @success-color !important;
     border-right-width: 1px !important;
     outline: 0;
   }

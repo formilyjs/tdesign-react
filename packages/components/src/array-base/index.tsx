@@ -183,7 +183,7 @@ ArrayBase.Addition = (props) => {
   )
 }
 
-ArrayBase.Remove = React.forwardRef((props) => {
+ArrayBase.Remove = (props) => {
   const index = useIndex(props.index)
   const array = useArray()
   const prefixCls = usePrefixCls('formily-array-base')
@@ -206,9 +206,9 @@ ArrayBase.Remove = React.forwardRef((props) => {
       }}
     />
   )
-})
+}
 
-ArrayBase.MoveDown = React.forwardRef((props) => {
+ArrayBase.MoveDown = (props) => {
   const index = useIndex(props.index)
   const array = useArray()
   const prefixCls = usePrefixCls('formily-array-base')
@@ -230,9 +230,9 @@ ArrayBase.MoveDown = React.forwardRef((props) => {
       }}
     />
   )
-})
+}
 
-ArrayBase.MoveUp = React.forwardRef((props) => {
+ArrayBase.MoveUp = (props) => {
   const index = useIndex(props.index)
   const array = useArray()
   const prefixCls = usePrefixCls('formily-array-base')
@@ -254,7 +254,7 @@ ArrayBase.MoveUp = React.forwardRef((props) => {
       }}
     />
   )
-})
+}
 
 ArrayBase.useArray = useArray
 ArrayBase.useIndex = useIndex
