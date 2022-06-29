@@ -70,7 +70,7 @@ export const ArrayCards: ComposedArrayCards = observer((props) => {
           {props.title || field.title}
         </span>
       )
-      const extra = (
+      const actions = (
         <span>
           <RecursionField
             schema={items}
@@ -81,7 +81,7 @@ export const ArrayCards: ComposedArrayCards = observer((props) => {
             }}
             onlyRenderProperties
           />
-          {props.extra}
+          {props.actions}
         </span>
       )
       const content = (
@@ -99,10 +99,10 @@ export const ArrayCards: ComposedArrayCards = observer((props) => {
         <ArrayBase.Item key={index} index={index} record={item}>
           <Card
             {...props}
-            onChange={() => {}}
+            // onChange={() => {}}
             className={cls(`${prefixCls}-item`, props.className)}
             title={title}
-            extra={extra}
+            actions={actions}
           >
             {content}
           </Card>

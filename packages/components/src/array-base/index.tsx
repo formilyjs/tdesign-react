@@ -7,6 +7,7 @@ import {
   AddIcon,
   ViewListIcon,
   IconProps,
+  IconFont,
 } from 'tdesign-icons-react'
 import { ArrayField } from '@formily/core'
 import {
@@ -182,7 +183,7 @@ ArrayBase.Addition = (props) => {
   )
 }
 
-ArrayBase.Remove = React.forwardRef((props, ref) => {
+ArrayBase.Remove = React.forwardRef((props) => {
   const index = useIndex(props.index)
   const array = useArray()
   const prefixCls = usePrefixCls('formily-array-base')
@@ -191,8 +192,9 @@ ArrayBase.Remove = React.forwardRef((props, ref) => {
   return (
     <DeleteIcon
       {...props}
+      name="delete"
       className={cls(`${prefixCls}-remove`, props.className)}
-      ref={ref}
+      // ref={ref}
       onClick={(e) => {
         if (array.props?.disabled) return
         e.stopPropagation()
@@ -206,7 +208,7 @@ ArrayBase.Remove = React.forwardRef((props, ref) => {
   )
 })
 
-ArrayBase.MoveDown = React.forwardRef((props, ref) => {
+ArrayBase.MoveDown = React.forwardRef((props) => {
   const index = useIndex(props.index)
   const array = useArray()
   const prefixCls = usePrefixCls('formily-array-base')
@@ -216,7 +218,7 @@ ArrayBase.MoveDown = React.forwardRef((props, ref) => {
     <ChevronDownIcon
       {...props}
       className={cls(`${prefixCls}-move-down`, props.className)}
-      ref={ref}
+      // ref={ref}
       onClick={(e) => {
         if (array.props?.disabled) return
         e.stopPropagation()
@@ -230,7 +232,7 @@ ArrayBase.MoveDown = React.forwardRef((props, ref) => {
   )
 })
 
-ArrayBase.MoveUp = React.forwardRef((props, ref) => {
+ArrayBase.MoveUp = React.forwardRef((props) => {
   const index = useIndex(props.index)
   const array = useArray()
   const prefixCls = usePrefixCls('formily-array-base')
@@ -240,7 +242,7 @@ ArrayBase.MoveUp = React.forwardRef((props, ref) => {
     <ChevronUpIcon
       {...props}
       className={cls(`${prefixCls}-move-up`, props.className)}
-      ref={ref}
+      // ref={ref}
       onClick={(e) => {
         if (array.props?.disabled) return
         e.stopPropagation()
