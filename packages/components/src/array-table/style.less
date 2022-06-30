@@ -1,4 +1,5 @@
-@ant-prefix: 't';
+@import '../__styles__/theme.less';
+@t-prefix: ~'t';
 @array-table-prefix-cls: ~'formily-tdesign-formily-array-table';
 
 .@{array-table-prefix-cls} {
@@ -7,20 +8,21 @@
     justify-content: center;
 
     .@{array-table-prefix-cls}-status-select.has-error {
-      .@{ant-prefix}-select-selector {
+      color: red;
+      .@{t-prefix}-input {
         border-color: @error-color !important;
       }
     }
   }
 
-  .@{ant-prefix}-table {
+  .@{t-prefix}-table {
     td {
       visibility: visible;
 
-      .@{ant-prefix}-formily-item:not(.@{ant-prefix}-formily-item-feedback-layout-popover) {
+      .@{t-prefix}-formily-item:not(.@{t-prefix}-formily-item-feedback-layout-popover) {
         margin-bottom: 0 !important;
 
-        .@{ant-prefix}-formily-item-help {
+        .@{t-prefix}-formily-item-help {
           position: absolute;
           font-size: 12px;
           top: 100%;

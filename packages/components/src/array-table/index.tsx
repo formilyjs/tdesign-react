@@ -9,6 +9,7 @@ import {
   TableProps,
   SelectProps,
   PrimaryTableCol,
+  SelectOption,
 } from 'tdesign-react'
 // import { PaginationProps } from 'antd/lib/pagination'
 // import { TableProps, ColumnProps } from 'antd/lib/table'
@@ -40,12 +41,17 @@ interface IArrayTablePaginationProps extends PaginationProps {
 
 interface IStatusSelectProps extends SelectProps {
   pageSize?: number
+  options?: {
+    label: string
+    value: number
+  }[]
 }
 
 type ComposedArrayTable = React.FC<TableProps> &
   ArrayBaseMixins & {
     Column?: React.FC<ColumnProps<any>>
   }
+const { Option } = Select
 
 const SortableRow = SortableElement((props: any) => <tr {...props} />)
 const SortableBody = SortableContainer((props: any) => <tbody {...props} />)
@@ -58,6 +64,11 @@ const isOperationsComponent = (schema: Schema) => {
   return schema['x-component']?.indexOf('Operations') > -1
 }
 
+/**
+ *
+ * @param schema
+ * @returns
+ */
 const isAdditionComponent = (schema: Schema) => {
   return schema['x-component']?.indexOf('Addition') > -1
 }
@@ -65,7 +76,6 @@ const isAdditionComponent = (schema: Schema) => {
 const useArrayTableSources = () => {
   const arrayField = useField()
   const schema = useFieldSchema()
-  debugger
   const parseSources = (schema: Schema): ObservableColumnSource[] => {
     if (
       isColumnComponent(schema) ||
@@ -164,7 +174,8 @@ const StatusSelect: React.FC<IStatusSelectProps> = observer(
           .match(/(\d+)/)?.[1]
       )
     }
-    const options = props.options?.map(({ label, value }) => {
+    const options = props.options?.map((option) => {
+      const { label, value } = option
       const hasError = errors.some(({ address }) => {
         const currentIndex = parseIndex(address)
         const startIndex = (value - 1) * props.pageSize
@@ -172,26 +183,35 @@ const StatusSelect: React.FC<IStatusSelectProps> = observer(
         return currentIndex >= startIndex && currentIndex <= endIndex
       })
       return {
-        label: hasError ? <Badge dot>{label}</Badge> : label,
+        label: hasError ? (
+          <Badge dot count={1}>
+            {label}
+          </Badge>
+        ) : (
+          label
+        ),
         value,
       }
     })
 
     const width = String(options?.length).length * 15
-
     return (
       <Select
         value={props.value}
         onChange={props.onChange}
-        options={options}
-        virtual
         style={{
           width: width < 60 ? 60 : width,
         }}
         className={cls(`${prefixCls}-status-select`, {
           'has-error': errors?.length,
         })}
-      />
+      >
+        {options.map((item) => (
+          <Option value={item.value} key={item.value}>
+            {item.label}
+          </Option>
+        ))}
+      </Select>
     )
   },
   {
@@ -217,7 +237,7 @@ const ArrayTablePagination: React.FC<IArrayTablePaginationProps> = (props) => {
   const pages = Array.from(new Array(totalPage)).map((_, index) => {
     const page = index + 1
     return {
-      label: page,
+      label: `${page}`,
       value: page,
     }
   })
@@ -242,16 +262,17 @@ const ArrayTablePagination: React.FC<IArrayTablePaginationProps> = (props) => {
               pageSize={pageSize}
               onChange={handleChange}
               options={pages}
-              notFoundContent={false}
+              // notFoundContent={false}
             />
             <Pagination
               {...props}
               pageSize={pageSize}
               current={current}
               total={data.length}
-              size={size}
-              showSizeChanger={false}
-              onChange={handleChange}
+              showPageNumber={false}
+              onChange={(pageInfo) => {
+                handleChange(pageInfo.current)
+              }}
             />
           </>
         </Space>
@@ -277,10 +298,11 @@ export const ArrayTable: ComposedArrayTable = observer((props: TableProps) => {
   const ref = useRef<HTMLDivElement>()
   const field = useField<ArrayField>()
   const prefixCls = usePrefixCls('formily-array-table')
-  const data = useMemo(() => {
-    let arr = Array.isArray(field.value) ? field.value.slice() : []
-    return arr.map((item, index) => ({ ...item, `$[{props.rowKey}]`: index }))
-  }, [field.value, props.rowKey])
+  // const data = useMemo(() => {
+  //   let arr = Array.isArray(field.value) ? field.value.slice() : []
+  //   return arr.map((item, index) => ({ ...item, [props.rowKey || 'rowKey']: index }))
+  // }, [field.value, props.rowKey])
+  const data = Array.isArray(field.value) ? field.value.slice() : []
   const sources = useArrayTableSources()
   const columns = useArrayTableColumns(data, sources)
   const pagination = isBool(props.pagination) ? {} : props.pagination
@@ -306,7 +328,7 @@ export const ArrayTable: ComposedArrayTable = observer((props: TableProps) => {
   console.log(columns)
   return (
     <ArrayTablePagination {...pagination} data={data}>
-      {(data, pager) => (
+      {(_data, pager) => (
         <div ref={ref} className={prefixCls}>
           <ArrayBase>
             <Table
@@ -314,11 +336,11 @@ export const ArrayTable: ComposedArrayTable = observer((props: TableProps) => {
               tableLayout="fixed"
               verticalAlign="middle"
               // size="small"
-              rowKey='rowKey'
+              rowKey="rowKey"
               // {...props}
               // pagination={false}
               columns={columns}
-              data={data}
+              data={_data}
               components={{
                 body: {
                   wrapper: (props: any) => (

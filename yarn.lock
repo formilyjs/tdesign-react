@@ -11086,10 +11086,10 @@ tdesign-icons-react@^0.1.1, tdesign-icons-react@~0.1.0:
     "@babel/runtime" "^7.16.5"
     classnames "^2.2.6"
 
-tdesign-react@^0.36.0:
-  version "0.36.0"
-  resolved "https://registry.npmmirror.com/tdesign-react/-/tdesign-react-0.36.0.tgz#9f51d503fcae980737501c90ce0568d3eb9fd595"
-  integrity sha512-1mz+R9+Dxalf2/IRP3Gk/0BzdlN3Yzu8gxMmU/O8b3zsWsA+A4TXukiR65fFTaMOcF3wlQuOQvM3q1KMUGwV8w==
+tdesign-react@^0.36.1:
+  version "0.36.1"
+  resolved "https://registry.yarnpkg.com/tdesign-react/-/tdesign-react-0.36.1.tgz#715b0f801201be4187bae2f35f33e04ba864e3c6"
+  integrity sha512-X8Osa83uRSzPfb3TsTBBeqJIemjNKs9YQ+uiPnw/C1rgyNNx8HQQ+6GuyNgrltmnoTwzeZOTHdNqhrS0HC7spw==
   dependencies:
     "@babel/runtime" "~7.17.2"
     "@popperjs/core" "~2.11.2"

@@ -41,7 +41,7 @@
     "react-dom": ">=16.8.0",
     "react-is": ">=16.8.0 || >=17.0.0",
     "tdesign-icons-react": "^0.1.1",
-    "tdesign-react": "^0.36.0"
+    "tdesign-react": "^0.36.1"
   },
   "dependencies": {
     "@formily/core": "^2.1.7",
@@ -55,7 +55,7 @@
     "react-sortable-hoc": "^2.0.0",
     "react-sticky-box": "^1.0.2",
     "tdesign-icons-react": "^0.1.1",
-    "tdesign-react": "^0.36.0"
+    "tdesign-react": "^0.36.1"
   },
   "gitHead": "2eeb30390142a3806c91549a9d87fda4e7908a8c"
 }
