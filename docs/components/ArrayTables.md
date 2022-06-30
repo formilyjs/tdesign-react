@@ -52,7 +52,7 @@ export default () => {
           <SchemaField.Object>
             <SchemaField.Void
               x-component="ArrayTable.Column"
-              x-component-props={{ width: 50, title: 'Sort', align: 'center' }}
+              x-component-props={{ width: 80, title: 'Sort', align: 'center' }}
             >
               <SchemaField.Void
                 x-decorator="FormItem"
