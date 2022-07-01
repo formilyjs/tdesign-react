@@ -11,13 +11,7 @@ type ComposedCheckbox = React.FC<CheckboxProps> & {
   __ANT_CHECKBOX?: boolean
 }
 
-export const Checkbox: ComposedCheckbox = connect(
-  TdCheckbox,
-  mapProps({
-    value: 'checked',
-    onInput: 'onChange',
-  })
-)
+export const Checkbox: ComposedCheckbox = connect(TdCheckbox)
 
 Checkbox.Group = connect(
   TdCheckbox.Group,

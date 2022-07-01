@@ -40,5 +40,8 @@
     "react-dom": ">=16.8.0",
     "react-is": ">=16.8.0 || >=17.0.0"
   },
-  "gitHead": "2eeb30390142a3806c91549a9d87fda4e7908a8c"
+  "gitHead": "2eeb30390142a3806c91549a9d87fda4e7908a8c",
+  "dependencies": {
+    "mfetch": "^0.2.27"
+  }
 }
