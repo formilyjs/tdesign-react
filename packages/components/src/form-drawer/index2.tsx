@@ -11,7 +11,7 @@ import {
   applyMiddleware,
   IMiddleware,
 } from '@formily/shared'
-import { Dialog, DialogProps } from 'tdesign-react'
+import { Drawer, DrawerProps } from 'tdesign-react'
 import {
   usePrefixCls,
   loading,
@@ -19,7 +19,7 @@ import {
   createPortalRoot,
 } from '../__builtins__'
 
-type FormDialogRenderer =
+type FormDrawerRenderer =
   | React.ReactElement
   | ((form: Form) => React.ReactElement)
 
@@ -31,7 +31,7 @@ const isModalTitle = (props: any): props is ModalTitle => {
   )
 }
 
-const getModelProps = (props: any): IDialogProps => {
+const getModelProps = (props: any): IDrawerProps => {
   if (isModalTitle(props)) {
     return {
       header: props,
@@ -41,43 +41,43 @@ const getModelProps = (props: any): IDialogProps => {
   }
 }
 
-export interface IFormDialog {
-  forOpen(middleware: IMiddleware<IFormProps>): IFormDialog
-  forConfirm(middleware: IMiddleware<Form>): IFormDialog
-  forCancel(middleware: IMiddleware<Form>): IFormDialog
+export interface IFormDrawer {
+  forOpen(middleware: IMiddleware<IFormProps>): IFormDrawer
+  forConfirm(middleware: IMiddleware<Form>): IFormDrawer
+  forCancel(middleware: IMiddleware<Form>): IFormDrawer
   open(props?: IFormProps): Promise<any>
   close(): void
 }
 
-export interface IDialogProps extends DialogProps {
+export interface IDrawerProps extends DrawerProps {
   onConfirm?: (context) => void | boolean
   onCancel?: (context) => void | boolean
   loadingText?: string
   confirmText?: string
 }
 
-export function FormDialog(
-  title: IDialogProps,
+export function FormDrawer(
+  title: IDrawerProps,
   id: string,
-  renderer: FormDialogRenderer
-): IFormDialog
-export function FormDialog(
-  title: IDialogProps,
-  renderer: FormDialogRenderer
-): IFormDialog
-export function FormDialog(
+  renderer: FormDrawerRenderer
+): IFormDrawer
+export function FormDrawer(
+  title: IDrawerProps,
+  renderer: FormDrawerRenderer
+): IFormDrawer
+export function FormDrawer(
   title: ModalTitle,
   id: string,
-  renderer: FormDialogRenderer
-): IFormDialog
-export function FormDialog(
+  renderer: FormDrawerRenderer
+): IFormDrawer
+export function FormDrawer(
   title: ModalTitle,
-  renderer: FormDialogRenderer
-): IFormDialog
-export function FormDialog(title: any, id: any, renderer?: any): IFormDialog {
+  renderer: FormDrawerRenderer
+): IFormDrawer
+export function FormDrawer(title: any, id: any, renderer?: any): IFormDrawer {
   if (isFn(id) || React.isValidElement(id)) {
     renderer = id
-    id = 'form-dialog'
+    id = 'form-drawer'
   }
   const env = {
     host: document.createElement('div'),
@@ -89,19 +89,19 @@ export function FormDialog(title: any, id: any, renderer?: any): IFormDialog {
   }
   const root = createPortalRoot(env.host, id)
   const props = getModelProps(title)
-  const modal = {
+  const drawer = {
     ...props,
-    onClosed: () => {
-      props?.onClosed?.()
+    onClose: (e) => {
+      props?.onClose?.(e)
       root.unmount()
     },
   }
-  const DialogContent = observer(() => {
+  const DrawerContent = observer(() => {
     return (
       <Fragment>{isFn(renderer) ? renderer(env?.form) : renderer}</Fragment>
     )
   })
-  const renderDialog = (
+  const renderDrawer = (
     visible = true,
     resolve?: () => any,
     reject?: () => any
@@ -109,63 +109,63 @@ export function FormDialog(title: any, id: any, renderer?: any): IFormDialog {
     return (
       <Observer>
         {() => (
-          <Dialog
-            {...modal}
+          <Drawer
+            {...drawer}
             visible={visible}
             confirmBtn={{
               loading: env.form.submitting,
-              content: modal.confirmText || '确认',
+              content: drawer.confirmText || '确认',
             }}
             onCancel={(e) => {
-              if (modal?.onCancel?.(e) !== false) {
+              if (drawer?.onCancel?.(e) !== false) {
                 reject()
               }
             }}
             onClose={(e) => {
-              if (modal?.onCancel?.(e) !== false) {
+              if (drawer?.onCancel?.(e) !== false) {
                 reject()
               }
             }}
             onConfirm={async (e) => {
-              if (modal?.onConfirm?.(e) !== false) {
+              if (drawer?.onConfirm?.(e) !== false) {
                 resolve()
               }
             }}
           >
             <FormProvider form={env.form}>
-              <DialogContent />
+              <DrawerContent />
             </FormProvider>
-          </Dialog>
+          </Drawer>
         )}
       </Observer>
     )
   }
 
   document.body.appendChild(env.host)
-  const formDialog = {
+  const formDrawer = {
     forOpen: (middleware: IMiddleware<IFormProps>) => {
       if (isFn(middleware)) {
         env.openMiddlewares.push(middleware)
       }
-      return formDialog
+      return formDrawer
     },
     forConfirm: (middleware: IMiddleware<Form>) => {
       if (isFn(middleware)) {
         env.confirmMiddlewares.push(middleware)
       }
-      return formDialog
+      return formDrawer
     },
     forCancel: (middleware: IMiddleware<Form>) => {
       if (isFn(middleware)) {
         env.cancelMiddlewares.push(middleware)
       }
-      return formDialog
+      return formDrawer
     },
     open: async (props: IFormProps) => {
       if (env.promise) return env.promise
       env.promise = new Promise(async (resolve, reject) => {
         try {
-          props = await loading(modal.loadingText, () =>
+          props = await loading(drawer.loadingText, () =>
             applyMiddleware(props, env.openMiddlewares)
           )
           env.form = env.form || createForm(props)
@@ -173,22 +173,22 @@ export function FormDialog(title: any, id: any, renderer?: any): IFormDialog {
           reject(e)
         }
         root.render(() =>
-          renderDialog(
+          renderDrawer(
             true,
             () => {
               env.form
                 .submit(async () => {
                   await applyMiddleware(env.form, env.confirmMiddlewares)
                   resolve(toJS(env.form.values))
-                  formDialog.close()
+                  formDrawer.close()
                 })
                 .catch(() => {})
             },
             async () => {
-              await loading(modal.loadingText, () =>
+              await loading(drawer.loadingText, () =>
                 applyMiddleware(env.form, env.cancelMiddlewares)
               )
-              formDialog.close()
+              formDrawer.close()
             }
           )
         )
@@ -197,17 +197,17 @@ export function FormDialog(title: any, id: any, renderer?: any): IFormDialog {
     },
     close: () => {
       if (!env.host) return
-      root.render(() => renderDialog(false))
+      root.render(() => renderDrawer(false))
     },
   }
-  return formDialog
+  return formDrawer
 }
 
-const DialogFooter: React.FC = (props) => {
+const DrawerFooter: React.FC = (props) => {
   const ref = useRef<HTMLDivElement>()
   const [footer, setFooter] = useState<HTMLDivElement>()
   const footerRef = useRef<HTMLDivElement>()
-  const prefixCls = usePrefixCls('modal')
+  const prefixCls = usePrefixCls('drawer')
   useLayoutEffect(() => {
     const content = ref.current?.closest(`.${prefixCls}-content`)
     if (content) {
@@ -232,8 +232,8 @@ const DialogFooter: React.FC = (props) => {
   )
 }
 
-FormDialog.Footer = DialogFooter
+FormDrawer.Footer = DrawerFooter
 
-FormDialog.Portal = createPortalProvider('form-dialog')
+FormDrawer.Portal = createPortalProvider('form-drawer')
 
-export default FormDialog
+export default FormDrawer
