@@ -446,6 +446,14 @@
     "@formily/shared" "2.1.7"
     "@formily/validator" "2.1.7"
 
+"@formily/grid@^2.1.9":
+  version "2.1.9"
+  resolved "https://mirrors.tencent.com/npm/@formily%2fgrid/-/grid-2.1.9.tgz#6fd32070fb78a7741ff71bb8fa56c19abac12eb1"
+  integrity sha512-7CajGenQ3D4+z77jXCEoilbdhfufsrTG9SM+RboyhQVPhuSfV/bbuuCX7/cUtMhXp9pzYwRltvGE1jBGIVQUDQ==
+  dependencies:
+    "@formily/reactive" "2.1.9"
+    "@juggle/resize-observer" "^3.3.1"
+
 "@formily/json-schema@2.1.7":
   version "2.1.7"
   resolved "https://registry.npmmirror.com/@formily/json-schema/-/json-schema-2.1.7.tgz#dafc14fbf8759997ec573ca3056abdfdb644a9c9"
@@ -485,6 +493,11 @@
   version "2.1.7"
   resolved "https://registry.npmmirror.com/@formily/reactive/-/reactive-2.1.7.tgz#45d671ef52d045bfca4d471dddf3c5ff599687b8"
   integrity sha512-NQX9Hmm288SnjpTgKEbRW7qnnI6Ir5K6pMpynhcEjxB7iZIar68f0zAbaVvpJ+Cgp4sg6v1oLUTjj64uLFtE+g==
+
+"@formily/reactive@2.1.9":
+  version "2.1.9"
+  resolved "https://mirrors.tencent.com/npm/@formily%2freactive/-/reactive-2.1.9.tgz#f4619a4521a068d9dc4a9f0a01254a75c3d5168d"
+  integrity sha512-rpZdf0FhhNsE7mepEqsSDYF+HW6VSYBHbJYwDnaymRT4NWrvpBjB88aFvgoKbJ2udM/5GLB5fji5Kf6toV8cpg==
 
 "@formily/shared@2.1.7", "@formily/shared@^2.1.7":
   version "2.1.7"

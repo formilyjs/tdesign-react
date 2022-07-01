@@ -10,8 +10,6 @@ import {
   SelectProps,
   PrimaryTableCol,
 } from 'tdesign-react'
-// import { PaginationProps } from 'antd/lib/pagination'
-// import { TableProps, ColumnProps } from 'antd/lib/table'
 import cls from 'classnames'
 import { SortableContainer, SortableElement } from 'react-sortable-hoc'
 import { GeneralField, FieldDisplayTypes, ArrayField } from '@formily/core'
@@ -227,7 +225,7 @@ const ArrayTablePagination: React.FC<IArrayTablePaginationProps> = (props) => {
   const [current, setCurrent] = useState(1)
   const prefixCls = usePrefixCls('formily-array-table')
   const pageSize = props.pageSize || 10
-  const size = props.size || 'default'
+  // const size = props.size || 'default'
   const data = props.data || []
   const startIndex = (current - 1) * pageSize
   const endIndex = startIndex + pageSize - 1
@@ -303,10 +301,10 @@ export const ArrayTable: ComposedArrayTable = observer((props: TableProps) => {
   const columns = useArrayTableColumns(data, sources)
   const pagination = isBool(props.pagination) ? {} : props.pagination
   const addition = useAddition()
-  console.log(data)
-  const defaultRowKey = (record: any) => {
-    return data.indexOf(record)
-  }
+  // console.log(data)
+  // const defaultRowKey = (record: any) => {
+  //   return data.indexOf(record)
+  // }
   const addTdStyles = (node: HTMLElement) => {
     const helper = document.body.querySelector(`.${prefixCls}-sort-helper`)
     if (helper) {
@@ -321,7 +319,7 @@ export const ArrayTable: ComposedArrayTable = observer((props: TableProps) => {
     }
   }
 
-  console.log(columns)
+  // console.log(columns)
   return (
     <ArrayTablePagination {...pagination} data={data}>
       {(_data, pager) => (

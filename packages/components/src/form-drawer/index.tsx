@@ -30,9 +30,9 @@ type FormDrawerRenderer =
 
 type DrawerTitle = string | number | React.ReactElement
 
-type EventType =
-  | React.KeyboardEvent<HTMLDivElement>
-  | React.MouseEvent<HTMLDivElement | HTMLButtonElement>
+// type EventType =
+//   | React.KeyboardEvent<HTMLDivElement>
+//   | React.MouseEvent<HTMLDivElement | HTMLButtonElement>
 
 const isDrawerTitle = (props: any): props is DrawerTitle => {
   return (
@@ -107,10 +107,6 @@ export function FormDrawer(title: any, id: any, renderer?: any): IFormDrawer {
         env.form.submit()
       }
     },
-    confirmBtn: {
-      loading: env.form.submitting,
-      content: props.confirmText || '确认',
-    },
 
     // afterVisibleChange: (visible: boolean) => {
     //   props?.afterVisibleChange?.(visible)
@@ -123,7 +119,14 @@ export function FormDrawer(title: any, id: any, renderer?: any): IFormDrawer {
   })
   const renderDrawer = (visible = true) => {
     return (
-      <Drawer {...drawer} visible={visible}>
+      <Drawer
+        {...drawer}
+        visible={visible}
+        confirmBtn={{
+          loading: env.form.submitting,
+          content: props.confirmText || '确认',
+        }}
+      >
         <FormProvider form={env.form}>
           <DrawerContent />
         </FormProvider>

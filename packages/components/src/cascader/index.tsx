@@ -8,7 +8,7 @@ interface CascaderRef {
   blur: () => void
 }
 
-type FixAntdCascaderType = React.ForwardRefExoticComponent<
+type FixTdCascaderType = React.ForwardRefExoticComponent<
   CascaderProps &
     React.RefAttributes<CascaderRef> & {
       suffixIcon?: React.ReactNode
@@ -16,7 +16,7 @@ type FixAntdCascaderType = React.ForwardRefExoticComponent<
 >
 
 export const Cascader = connect(
-  TdCascader as FixAntdCascaderType,
+  TdCascader as FixTdCascaderType,
   mapProps(
     {
       dataSource: 'options',
@@ -24,7 +24,7 @@ export const Cascader = connect(
     (props, field) => {
       return {
         ...props,
-        loading: field?.['loading'] || field?.['validating']
+        loading: field?.['loading'] || field?.['validating'],
       }
     }
   ),

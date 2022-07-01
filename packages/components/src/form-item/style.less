@@ -16,47 +16,10 @@
     min-height: @height-base - 2;
   }
 
-  textarea.@{td-prefix}-input {
-    height: auto;
-  }
-
-  // input[type=file]
-  .@{td-prefix}-upload {
-    background: transparent;
-  }
-
-  .@{td-prefix}-upload.@{td-prefix}-upload-drag {
-    background: @background-color-light;
-  }
-
   input[type='radio'],
   input[type='checkbox'] {
     width: @font-size-base;
     height: @font-size-base;
-  }
-
-  // Radios and checkboxes on same line
-  .@{td-prefix}-radio-inline,
-  .@{td-prefix}-checkbox-inline {
-    display: inline-block;
-    margin-left: 8px;
-    font-weight: normal;
-    vertical-align: middle;
-    cursor: pointer;
-
-    &:first-child {
-      margin-left: 0;
-    }
-  }
-
-  .@{td-prefix}-checkbox-vertical,
-  .@{td-prefix}-radio-vertical {
-    display: block;
-  }
-
-  .@{td-prefix}-checkbox-vertical + .@{td-prefix}-checkbox-vertical,
-  .@{td-prefix}-radio-vertical + .@{td-prefix}-radio-vertical {
-    margin-left: 0;
   }
 
   .@{td-prefix}-input-number {
@@ -72,15 +35,13 @@
   }
 
   .@{td-prefix}-select,
-  .@{td-prefix}-cascader-picker,
-  .@{td-prefix}-picker {
-    width: 100%;
+  .@{td-prefix}-range-input {
+    display: block !important;
   }
 
-  // Don't impact select inside input group
-  .@{td-prefix}-input-group .@{td-prefix}-select,
-  .@{td-prefix}-input-group .@{td-prefix}-cascader-picker {
-    width: auto;
+  .@{td-prefix}-date-range-picker,
+  .@{td-prefix}-date-picker {
+    width: 100% !important;
   }
 }
 
@@ -232,94 +193,6 @@
     height: @height-sm - 2;
   }
 
-  .@{td-prefix}-input-affix-wrapper,
-  .@{td-prefix}-input-number,
-  .@{td-prefix}-picker {
-    padding: 0px 11px;
-
-    input {
-      height: @height-sm - 2;
-      font-size: @font-size-sm;
-    }
-  }
-
-  .@{td-prefix}-cascader-picker {
-    height: @height-sm - 2;
-
-    input {
-      padding: 0 7px;
-      height: @height-sm - 2;
-      font-size: @font-size-sm;
-    }
-  }
-
-  .@{td-prefix}-select-single:not(.@{td-prefix}-select-customize-input)
-    .@{td-prefix}-select-selector {
-    padding: 0px 11px;
-    height: @height-sm - 2;
-    font-size: @font-size-sm;
-    line-height: @height-sm;
-
-    .@{td-prefix}-select-selection-search {
-      height: @height-sm;
-      line-height: @height-sm - 2;
-
-      &-input {
-        height: @height-sm;
-        line-height: @height-sm - 2;
-      }
-    }
-
-    .@{td-prefix}-select-selection-placeholder {
-      line-height: @height-sm - 2;
-      height: @height-sm;
-    }
-
-    .@{td-prefix}-select-selection-item {
-      line-height: @height-sm - 2;
-      height: @height-sm;
-    }
-  }
-
-  .@{td-prefix}-select-multiple:not(.@{td-prefix}-select-customize-input)
-    .@{td-prefix}-select-selector {
-    padding: 0px 2px;
-    height: @height-sm - 2;
-    font-size: @font-size-sm;
-    line-height: @height-sm;
-
-    &::after {
-      height: @height-sm - 8;
-      line-height: @height-sm - 8;
-    }
-
-    .@{td-prefix}-select-selection-search {
-      height: @height-sm - 8;
-      line-height: @height-sm - 8;
-      margin-inline-start: 0;
-
-      &-input {
-        height: @height-sm - 12;
-        line-height: @height-sm - 12;
-      }
-    }
-
-    .@{td-prefix}-select-selection-placeholder {
-      line-height: @height-sm - 8;
-      height: @height-sm - 8;
-      left: 4px;
-    }
-
-    .@{td-prefix}-select-selection-overflow-item {
-      align-self: flex-start;
-    }
-
-    .@{td-prefix}-select-selection-item {
-      line-height: @height-sm - 10;
-      height: @height-sm - 8;
-    }
-  }
-
   &.@{form-item-cls}-feedback-layout-terse {
     margin-bottom: 8px;
 
@@ -375,102 +248,6 @@
     }
   }
 
-  .@{td-prefix}-input-affix-wrapper,
-  .@{td-prefix}-picker {
-    padding: 0px 11px;
-    line-height: @height-lg - 2;
-
-    input {
-      height: @height-lg - 2;
-      font-size: @font-size-lg;
-    }
-  }
-
-  .@{td-prefix}-btn {
-    height: @height-lg;
-    padding: 0px 8px;
-  }
-
-  .@{td-prefix}-radio-button-wrapper {
-    height: @height-lg;
-    line-height: @height-lg;
-  }
-
-  .@{td-prefix}-cascader-picker {
-    height: @height-lg - 2;
-
-    input {
-      padding: 0px 11px;
-      height: @height-lg - 2;
-      font-size: @font-size-lg;
-    }
-  }
-
-  .@{td-prefix}-select-single:not(.@{td-prefix}-select-customize-input)
-    .@{td-prefix}-select-selector {
-    padding: 0px 11px;
-    height: @height-lg;
-    font-size: @font-size-lg;
-    line-height: @height-lg;
-
-    .@{td-prefix}-select-selection-search {
-      height: @height-lg;
-      line-height: @height-lg - 2;
-
-      &-input {
-        height: @height-lg;
-        line-height: @height-lg - 2;
-      }
-    }
-
-    .@{td-prefix}-select-selection-placeholder {
-      line-height: @height-lg - 2;
-      height: @height-lg;
-    }
-
-    .@{td-prefix}-select-selection-item {
-      line-height: @height-lg - 2;
-      height: @height-lg;
-    }
-  }
-
-  .@{td-prefix}-select-multiple:not(.@{td-prefix}-select-customize-input)
-    .@{td-prefix}-select-selector {
-    padding: 0px 2px;
-    height: @height-lg - 2;
-    font-size: @font-size-lg;
-    line-height: @height-lg;
-
-    &::after {
-      height: @height-lg - 8;
-      line-height: @height-lg - 8;
-    }
-
-    .@{td-prefix}-select-selection-search {
-      height: @height-lg - 8;
-      line-height: @height-lg - 8;
-
-      &-input {
-        height: @height-lg - 12;
-        line-height: @height-lg - 12;
-      }
-    }
-
-    .@{td-prefix}-select-selection-placeholder {
-      line-height: @height-lg - 8;
-      height: @height-lg - 8;
-    }
-
-    .@{td-prefix}-select-selection-overflow-item {
-      align-self: flex-start;
-    }
-
-    .@{td-prefix}-select-selection-item {
-      line-height: @height-lg - 10;
-      height: @height-lg - 8;
-    }
-  }
-
   &.@{form-item-cls}-feedback-layout-terse {
     margin-bottom: 8px;
 
@@ -503,6 +280,7 @@
   .@{td-prefix}-popup__reference {
     display: block;
   }
+
   margin-bottom: 8px;
 }
 
@@ -736,8 +514,6 @@
   .@{td-prefix}-picker,
   .@{td-prefix}-input,
   .@{td-prefix}-input-number,
-  .@{td-prefix}-input-affix-wrapper,
-  .@{td-prefix}-input-affix-wrapper:hover,
   .@{td-prefix}-input:hover {
     border-color: @warning-color !important;
   }
@@ -751,22 +527,6 @@
     &.@{td-prefix}-select-open .@{td-prefix}-select-selector,
     &.@{td-prefix}-select-focused .@{td-prefix}-select-selector {
       // .active(@warning-color);
-    }
-  }
-
-  .@{td-prefix}-input-number,
-  .@{td-prefix}-picker {
-    background-color: @form-warning-input-bg;
-    border-color: @warning-color;
-
-    &-focused,
-    &:focus {
-      // .active(@warning-color);
-    }
-
-    &:not([disabled]):hover {
-      background-color: @form-warning-input-bg;
-      border-color: @warning-color;
     }
   }
 
@@ -784,30 +544,13 @@
 }
 
 .@{form-item-cls}-success {
-  .@{td-prefix}-select-selector,
-  .@{td-prefix}-cascader-picker,
-  .@{td-prefix}-picker,
-  .@{td-prefix}-input,
-  .@{td-prefix}-input-number,
-  .@{td-prefix}-input-affix-wrapper,
-  .@{td-prefix}-input-affix-wrapper,
   .@{td-prefix}-input {
     border-color: @success-color !important;
   }
-
-  .@{td-prefix}-select-selector,
-  .@{td-prefix}-cascader-picker,
-  .@{td-prefix}-picker,
-  .@{td-prefix}-input,
-  .@{td-prefix}-input-number,
-  .@{td-prefix}-input-affix-wrapper,
-  .@{td-prefix}-input-affix-wrapper:hover,
   .@{td-prefix}-input:hover {
     border-color: @success-color !important;
   }
 
-  .@{td-prefix}-input-affix-wrapper-focused,
-  .@{td-prefix}-input-affix-wrapper:focus,
   .@{td-prefix}-input-focused,
   .@{td-prefix}-input:focus {
     border-color: @success-color !important;

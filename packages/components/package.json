@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "@formily/core": "^2.1.7",
+    "@formily/grid": "^2.1.9",
     "@formily/react": "^2.1.7",
     "@formily/reactive": "^2.1.7",
     "@formily/reactive-react": "^2.1.7",
