@@ -1,17 +1,17 @@
-import { message } from "tdesign-react"
+import { MessagePlugin } from 'tdesign-react'
 
 export const loading = async (
   title = 'Loading...',
   processor: () => Promise<any>
 ) => {
-  let hide = null
+  let ins = null
   let loading = setTimeout(() => {
-    hide = message.loading(title)
+    ins = MessagePlugin.loading(title)
   }, 100)
   try {
     return await processor()
   } finally {
-    hide?.()
+    MessagePlugin.close(ins)
     clearTimeout(loading)
   }
 }
