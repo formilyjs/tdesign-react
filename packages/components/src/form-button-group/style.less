@@ -1,1 +1,11 @@
+@import '../__styles__/theme.less';
+@form-item-cls: ~'formily-tdesign-formily-button-group';
 
+.@{form-item-cls}-sticky{
+    padding: 10px 0;
+    border-top: 1px solid var(@border-color-base);
+    z-index: 999;
+    &-inner {
+      display: flex;
+    }
+}

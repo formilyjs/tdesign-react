@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useRef, useEffect, useMemo } from 'react'
+import React, { Fragment, useState, useRef, useEffect } from 'react'
 import {
   Table,
   Pagination,
@@ -9,7 +9,6 @@ import {
   TableProps,
   SelectProps,
   PrimaryTableCol,
-  SelectOption,
 } from 'tdesign-react'
 // import { PaginationProps } from 'antd/lib/pagination'
 // import { TableProps, ColumnProps } from 'antd/lib/table'
@@ -256,25 +255,22 @@ const ArrayTablePagination: React.FC<IArrayTablePaginationProps> = (props) => {
     return (
       <div className={`${prefixCls}-pagination`}>
         <Space>
-          <>
-            <StatusSelect
-              value={current}
-              pageSize={pageSize}
-              onChange={handleChange}
-              options={pages}
-              // notFoundContent={false}
-            />
-            <Pagination
-              {...props}
-              pageSize={pageSize}
-              current={current}
-              total={data.length}
-              showPageNumber={false}
-              onChange={(pageInfo) => {
-                handleChange(pageInfo.current)
-              }}
-            />
-          </>
+          <StatusSelect
+            value={current}
+            pageSize={pageSize}
+            onChange={handleChange}
+            options={pages}
+          />
+          <Pagination
+            {...props}
+            pageSize={pageSize}
+            current={current}
+            total={data.length}
+            showPageNumber={false}
+            onChange={(pageInfo) => {
+              handleChange(pageInfo.current)
+            }}
+          />
         </Space>
       </div>
     )
