@@ -11,6 +11,7 @@ import cls from 'classnames'
 import { ISchema } from '@formily/json-schema'
 import { usePrefixCls } from '../__builtins__'
 import { ArrayBase, ArrayBaseMixins } from '../array-base'
+import Empty from '../empty'
 
 type ComposedArrayCards = React.FC<CardProps> & ArrayBaseMixins
 
@@ -125,11 +126,10 @@ export const ArrayCards: ComposedArrayCards = observer((props) => {
     return (
       <Card
         {...props}
-        onChange={() => {}}
         className={cls(`${prefixCls}-item`, props.className)}
         title={props.title || field.title}
       >
-        空
+        <Empty />
       </Card>
     )
   }

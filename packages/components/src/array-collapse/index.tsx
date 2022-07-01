@@ -19,6 +19,7 @@ import { toArr } from '@formily/shared'
 import cls from 'classnames'
 import ArrayBase, { ArrayBaseMixins } from '../array-base'
 import { usePrefixCls } from '../__builtins__'
+import Empty from '../empty'
 
 const { Panel } = Collapse
 export interface IArrayCollapseProps extends CollapseProps {
@@ -107,7 +108,7 @@ export const ArrayCollapse: ComposedArrayCollapse = observer(
       if (dataSource.length) return
       return (
         <Card className={cls(`${prefixCls}-item`, props.className)}>
-          {/* <Empty /> */}空
+          <Empty />
         </Card>
       )
     }
