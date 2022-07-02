@@ -25,7 +25,7 @@
   .@{td-prefix}-input-number {
     width: 100%;
 
-    + .@{td-prefix}-form-text {
+    +.@{td-prefix}-form-text {
       margin-left: 8px;
     }
 
@@ -40,7 +40,9 @@
   }
 
   .@{td-prefix}-date-range-picker,
-  .@{td-prefix}-date-picker {
+  .@{td-prefix}-date-picker,
+  .@{td-prefix}-time-picker,
+  .@{td-prefix}-time-range-picker {
     width: 100% !important;
   }
 }
@@ -73,13 +75,13 @@
 }
 
 .@{form-item-cls}-label-align-left {
-  > .@{form-item-cls}-label {
+  >.@{form-item-cls}-label {
     justify-content: flex-start;
   }
 }
 
 .@{form-item-cls}-label-align-right {
-  > .@{form-item-cls}-label {
+  >.@{form-item-cls}-label {
     justify-content: flex-end;
   }
 }
@@ -189,7 +191,7 @@
     min-height: @height-sm - 2;
   }
 
-  .@{form-item-cls}-label > label {
+  .@{form-item-cls}-label>label {
     height: @height-sm - 2;
   }
 
@@ -337,10 +339,10 @@
 }
 
 .@{form-item-cls}-fullness {
-  > .@{form-item-cls}-control {
-    > .@{form-item-cls}-control-content {
-      > .@{form-item-cls}-control-content-component {
-        > *:first-child {
+  >.@{form-item-cls}-control {
+    >.@{form-item-cls}-control-content {
+      >.@{form-item-cls}-control-content-component {
+        >*:first-child {
           width: 100%;
         }
       }
@@ -363,6 +365,7 @@
 }
 
 .@{form-item-cls}-bordered-none {
+
   .t-input,
   .t-range-input,
   .t-cascader {
@@ -380,8 +383,7 @@
   .@{td-prefix}-input-number,
   .@{td-prefix}-picker,
   .@{td-prefix}-cascader-picker:focus .@{td-prefix}-cascader-input,
-  .@{td-prefix}-select:not(.@{td-prefix}-select-customize-input)
-    .@{td-prefix}-select-selector,
+  .@{td-prefix}-select:not(.@{td-prefix}-select-customize-input) .@{td-prefix}-select-selector,
   .@{td-prefix}-input-affix-wrapper,
   .@{td-prefix}-input {
     border: none !important;
@@ -413,8 +415,7 @@
   .@{td-prefix}-input-number,
   .@{td-prefix}-picker,
   .@{td-prefix}-cascader-picker:focus .@{td-prefix}-cascader-input,
-  .@{td-prefix}-select:not(.@{td-prefix}-select-customize-input)
-    .@{td-prefix}-select-selector,
+  .@{td-prefix}-select:not(.@{td-prefix}-select-customize-input) .@{td-prefix}-select-selector,
   .@{td-prefix}-input {
     // .active();
   }
@@ -432,21 +433,21 @@
 
 .@{form-item-cls}-error {
   .@{td-prefix}-input {
-    border-color: @error-color !important;
+    border-color: @error-color  !important;
   }
 
   .@{td-prefix}-input,
   .@{td-prefix}-input:hover,
   .@{td-prefix}-textarea__inner,
   .@{td-prefix}-input:focus {
-    border-color: @error-color !important;
-    box-shadow: @error-box-shadow !important;
+    border-color: @error-color  !important;
+    box-shadow: @error-box-shadow  !important;
   }
 
   .@{td-prefix}-select:not(.@{td-prefix}-select-disabled):not(.@{td-prefix}-select-customize-input) {
     .@{td-prefix}-select-selector {
       background-color: @form-error-input-bg;
-      border-color: @error-color !important;
+      border-color: @error-color  !important;
     }
 
     &.@{td-prefix}-select-open .@{td-prefix}-select-selector,
@@ -485,18 +486,19 @@
 }
 
 .@{form-item-cls}-error-help {
-  color: @error-color !important;
+  color: @error-color  !important;
 }
 
 .@{form-item-cls}-warning-help {
-  color: @warning-color !important;
+  color: @warning-color  !important;
 }
 
 .@{form-item-cls}-success-help {
-  color: @success-color !important;
+  color: @success-color  !important;
 }
 
 .@{form-item-cls}-warning {
+
   .@{td-prefix}-select-selector,
   .@{td-prefix}-cascader-picker,
   .@{td-prefix}-picker,
@@ -505,8 +507,8 @@
   .@{td-prefix}-input-affix-wrapper,
   .@{td-prefix}-input-affix-wrapper,
   .@{td-prefix}-input {
-    border-color: @warning-color !important;
-    box-shadow: @warning-box-shadow !important;
+    border-color: @warning-color  !important;
+    box-shadow: @warning-box-shadow  !important;
   }
 
   .@{td-prefix}-select-selector,
@@ -515,13 +517,13 @@
   .@{td-prefix}-input,
   .@{td-prefix}-input-number,
   .@{td-prefix}-input:hover {
-    border-color: @warning-color !important;
+    border-color: @warning-color  !important;
   }
 
   .@{td-prefix}-select:not(.@{td-prefix}-select-disabled):not(.@{td-prefix}-select-customize-input) {
     .@{td-prefix}-select-selector {
       background-color: @form-warning-input-bg;
-      border-color: @warning-color !important;
+      border-color: @warning-color  !important;
     }
 
     &.@{td-prefix}-select-open .@{td-prefix}-select-selector,
@@ -545,15 +547,16 @@
 
 .@{form-item-cls}-success {
   .@{td-prefix}-input {
-    border-color: @success-color !important;
+    border-color: @success-color  !important;
   }
+
   .@{td-prefix}-input:hover {
-    border-color: @success-color !important;
+    border-color: @success-color  !important;
   }
 
   .@{td-prefix}-input-focused,
   .@{td-prefix}-input:focus {
-    border-color: @success-color !important;
+    border-color: @success-color  !important;
     border-right-width: 1px !important;
     outline: 0;
   }
