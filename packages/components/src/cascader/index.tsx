@@ -28,7 +28,7 @@ export const Cascader = connect(
       }
     }
   ),
-  mapReadPretty(PreviewText.Input)
+  mapReadPretty(PreviewText.Cascader)
 )
 
 export default Cascader

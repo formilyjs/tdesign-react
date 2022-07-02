@@ -23,7 +23,7 @@ const mapDateFormat = function () {
 export const DatePicker: ComposedDatePicker = connect(
   TdDatePicker,
   mapProps(mapDateFormat()),
-  mapReadPretty(PreviewText.Input)
+  mapReadPretty(PreviewText.DatePicker)
 )
 
 DatePicker.RangePicker = connect(
@@ -31,10 +31,11 @@ DatePicker.RangePicker = connect(
   mapProps((props, field) => {
     return {
       ...props,
+      // 处理 date-picker 值为 undefined 时报错的问题
       value: props.value ? props.value : [],
     }
   }),
-  mapReadPretty(PreviewText.Input)
+  mapReadPretty(PreviewText.DateRangePicker)
 )
 
 export default DatePicker

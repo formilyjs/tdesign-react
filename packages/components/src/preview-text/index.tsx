@@ -12,6 +12,7 @@ import {
   DatePickerProps,
   TimePickerProps,
   TimeRangePickerProps,
+  DateRangePickerProps,
 } from 'tdesign-react'
 import cls from 'classnames'
 import { formatMomentValue, usePrefixCls } from '../__builtins__'
@@ -99,20 +100,12 @@ const Select: React.FC<SelectProps> = observer((props) => {
   const placeholder = usePlaceholder()
   const getSelected = () => {
     const value = props.value
-    if (props.mode === 'multiple' || props.mode === 'tags') {
-      if (props.labelInValue) {
-        return isArr(value) ? value : []
-      } else {
-        return isArr(value)
-          ? value.map((val) => ({ label: val, value: val }))
-          : []
-      }
+    if (props.multiple) {
+      return isArr(value)
+        ? value.map((val) => ({ label: val, value: val }))
+        : []
     } else {
-      if (props.labelInValue) {
-        return isValid(value) ? [value] : []
-      } else {
-        return isValid(value) ? [{ label: value, value }] : []
-      }
+      return isValid(value) ? [{ label: value, value }] : []
     }
   }
 
@@ -145,39 +138,27 @@ const TreeSelect: React.FC<TreeSelectProps> = observer((props) => {
   const prefixCls = usePrefixCls('form-text')
   const dataSource = field?.dataSource?.length
     ? field.dataSource
-    : props?.treeData?.length
-    ? props.treeData
+    : props?.data?.length
+    ? props.data
     : []
   const getSelected = () => {
     const value = props.value
     if (props.multiple) {
-      if (props.labelInValue) {
-        return isArr(value) ? value : []
-      } else {
-        return isArr(value)
-          ? value.map((val) => ({ label: val, value: val }))
-          : []
-      }
+      return isArr(value)
+        ? value.map((val) => ({ label: val, value: val }))
+        : []
     } else {
-      if (props.labelInValue) {
-        return value ? [value] : []
-      } else {
-        return value ? [{ label: value, value }] : []
-      }
+      return value ? [{ label: value, value }] : []
     }
   }
 
-  const findLabel = (
-    value: any,
-    dataSource: any[],
-    treeNodeLabelProp?: string
-  ) => {
+  const findLabel = (value: any, dataSource: any[]) => {
     for (let i = 0; i < dataSource?.length; i++) {
       const item = dataSource[i]
       if (item?.value === value) {
-        return item?.label ?? item[treeNodeLabelProp]
+        return item?.label
       } else {
-        const childLabel = findLabel(value, item?.children, treeNodeLabelProp)
+        const childLabel = findLabel(value, item?.children)
         if (childLabel) return childLabel
       }
     }
@@ -189,9 +170,7 @@ const TreeSelect: React.FC<TreeSelectProps> = observer((props) => {
     return selected.map(({ value, label }, key) => {
       return (
         <Tag key={key}>
-          {findLabel(value, dataSource, props.treeNodeLabelProp) ||
-            label ||
-            placeholder}
+          {findLabel(value, dataSource) || label || placeholder}
         </Tag>
       )
     })

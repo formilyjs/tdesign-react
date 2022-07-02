@@ -17,7 +17,7 @@ export const Select: React.FC<SelectProps> = connect(
       }
     }
   ),
-  mapReadPretty(PreviewText.Input)
+  mapReadPretty(PreviewText.Select)
 )
 
 export default Select

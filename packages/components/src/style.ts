@@ -12,4 +12,6 @@ import './form-tab/style.less'
 export * from './editable/style'
 export * from './array-table/style'
 export * from './form-grid/style'
+export * from './preview-text/style'
 // import './array-tabs/'
+// import 'tdesign-react/dist/reset.css';

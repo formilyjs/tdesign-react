@@ -11,7 +11,6 @@ import {
   PrimaryTableCol,
 } from 'tdesign-react'
 import cls from 'classnames'
-import { SortableContainer, SortableElement } from 'react-sortable-hoc'
 import { GeneralField, FieldDisplayTypes, ArrayField } from '@formily/core'
 import {
   useField,
@@ -49,9 +48,6 @@ type ComposedArrayTable = React.FC<TableProps> &
     Column?: React.FC<ColumnProps<any>>
   }
 const { Option } = Select
-
-const SortableRow = SortableElement((props: any) => <tr {...props} />)
-const SortableBody = SortableContainer((props: any) => <tbody {...props} />)
 
 const isColumnComponent = (schema: Schema) => {
   return schema['x-component']?.indexOf('Column') > -1
@@ -132,10 +128,10 @@ const useArrayTableColumns = (
       key,
       title: columnProps.title,
       colKey: name,
-      cell: (value: any, record: any) => {
-        const index = data.indexOf(record)
+      cell: ({ row }) => {
+        const index = data.indexOf(row)
         const children = (
-          <ArrayBase.Item index={index} record={record}>
+          <ArrayBase.Item index={index} record={row}>
             <RecursionField schema={schema} name={index} onlyRenderProperties />
           </ArrayBase.Item>
         )
@@ -284,42 +280,19 @@ const ArrayTablePagination: React.FC<IArrayTablePaginationProps> = (props) => {
   )
 }
 
-const RowComp = (props: any) => {
-  return <SortableRow index={props['data-row-key'] || 0} {...props} />
-}
-
 export const ArrayTable: ComposedArrayTable = observer((props: TableProps) => {
   const ref = useRef<HTMLDivElement>()
   const field = useField<ArrayField>()
   const prefixCls = usePrefixCls('formily-array-table')
-  // const data = useMemo(() => {
-  //   let arr = Array.isArray(field.value) ? field.value.slice() : []
-  //   return arr.map((item, index) => ({ ...item, [props.rowKey || 'rowKey']: index }))
-  // }, [field.value, props.rowKey])
   const data = Array.isArray(field.value) ? field.value.slice() : []
   const sources = useArrayTableSources()
   const columns = useArrayTableColumns(data, sources)
   const pagination = isBool(props.pagination) ? {} : props.pagination
   const addition = useAddition()
-  // console.log(data)
   // const defaultRowKey = (record: any) => {
   //   return data.indexOf(record)
   // }
-  const addTdStyles = (node: HTMLElement) => {
-    const helper = document.body.querySelector(`.${prefixCls}-sort-helper`)
-    if (helper) {
-      const tds = node.querySelectorAll('td')
-      requestAnimationFrame(() => {
-        helper.querySelectorAll('td').forEach((td, index) => {
-          if (tds[index]) {
-            td.style.width = getComputedStyle(tds[index]).width
-          }
-        })
-      })
-    }
-  }
 
-  // console.log(columns)
   return (
     <ArrayTablePagination {...pagination} data={data}>
       {(_data, pager) => (
@@ -327,38 +300,21 @@ export const ArrayTable: ComposedArrayTable = observer((props: TableProps) => {
           <ArrayBase>
             <Table
               size="medium"
-              tableLayout="fixed"
-              verticalAlign="middle"
+              // tableLayout="fixed"
+              // verticalAlign="middle"
               // size="small"
               rowKey="rowKey"
-              // {...props}
-              // pagination={false}
+              disableDataPage={false}
               columns={columns}
               data={_data}
-              components={{
-                body: {
-                  wrapper: (props: any) => (
-                    <SortableBody
-                      useDragHandle
-                      lockAxis="y"
-                      helperClass={`${prefixCls}-sort-helper`}
-                      helperContainer={() => {
-                        return ref.current?.querySelector('tbody')
-                      }}
-                      onSortStart={({ node }) => {
-                        addTdStyles(node)
-                      }}
-                      onSortEnd={({ oldIndex, newIndex }) => {
-                        field.move(oldIndex, newIndex)
-                      }}
-                      {...props}
-                    />
-                  ),
-                  row: RowComp,
-                },
+              dragSort="row-handler"
+              onDragSort={({ currentIndex, targetIndex }) => {
+                field.move(currentIndex, targetIndex)
               }}
+              {...props}
             />
             <div style={{ marginTop: 5, marginBottom: 5 }}>{pager}</div>
+
             {sources.map((column, key) => {
               //专门用来承接对Column的状态管理
               if (!isColumnComponent(column.schema)) return

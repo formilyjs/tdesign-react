@@ -19,7 +19,7 @@ Radio.Group = connect(
   mapProps({
     dataSource: 'options',
   }),
-  mapReadPretty(PreviewText.Input)
+  mapReadPretty(PreviewText.Select)
 )
 
 export default Radio

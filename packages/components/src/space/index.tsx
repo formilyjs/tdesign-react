@@ -9,7 +9,7 @@ export const Space: React.FC<SpaceProps> = (props) => {
   return React.createElement(TdSpace, {
     size: props.size ?? layout?.spaceGap,
     ...props,
-    // 去掉 fragement
+    // https://github.com/Tencent/tdesign-react/pull/1009
     children: toArray(props.children),
   })
 }

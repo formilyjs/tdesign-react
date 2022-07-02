@@ -24,13 +24,13 @@ const mapTimeFormat = function () {
 export const TimePicker: ComposedTimePicker = connect(
   TdTimePicker,
   mapProps(mapTimeFormat()),
-  mapReadPretty(PreviewText.Input)
+  mapReadPretty(PreviewText.TimePicker)
 )
 
 TimePicker.RangePicker = connect(
   TimeRangePicker,
   mapProps(mapTimeFormat()),
-  mapReadPretty(PreviewText.Input)
+  mapReadPretty(PreviewText.TimeRangePicker)
 )
 
 export default TimePicker

@@ -15,7 +15,7 @@ export const TreeSelect = connect(
       }
     }
   ),
-  mapReadPretty(PreviewText.Input)
+  mapReadPretty(PreviewText.TreeSelect)
 )
 
 export default TreeSelect
