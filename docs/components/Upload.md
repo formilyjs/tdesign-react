@@ -39,3 +39,7 @@ export default () => (
   </FormProvider>
 )
 ```
+
+## API
+
+[https://tdesign.tencent.com/react/components/upload](https://tdesign.tencent.com/react/components/upload)
