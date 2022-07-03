@@ -1,6 +1,6 @@
 {
   "name": "@formily/tdesign-react",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-beta.0",
   "license": "MIT",
   "main": "lib",
   "types": "lib/index.d.ts",
@@ -36,7 +36,6 @@
     "access": "public"
   },
   "peerDependencies": {
-    "mfetch": "^0.2.27",
     "moment": "^2.29.3",
     "react": ">=16.8.0 || >=17.0.0",
     "react-dom": ">=16.8.0",
@@ -55,13 +54,9 @@
     "moment": "^2.29.3",
     "rc-util": "^5.22.5",
     "react-sortable-hoc": "^2.0.0",
-    "react-sticky-box": "^1.0.2",
+    "react-sticky-box": "^0.9.3",
     "tdesign-icons-react": "^0.1.1",
     "tdesign-react": "^0.36.1"
   },
-  "gitHead": "2eeb30390142a3806c91549a9d87fda4e7908a8c",
-  "devDependencies": {
-    "@types/react": ">=16.8.0 || >=17.0.0",
-    "@types/react-dom": ">=16.8.0"
-  }
+  "gitHead": "2eeb30390142a3806c91549a9d87fda4e7908a8c"
 }
