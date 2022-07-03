@@ -42,4 +42,4 @@ export default () => (
 
 ## API
 
-[https://tdesign.tencent.com/react/components/upload](https://tdesign.tencent.com/react/components/upload)
+参考 https://tdesign.tencent.com/react/components/upload

@@ -332,7 +332,7 @@ interface FormDialog {
 }
 ```
 
-`ModalProps`类型定义参考 ant design [Modal API](https://ant.design/components/modal-cn/#API)
+`ModalProps`类型定义参考 TDesign [Dialog API](https://tdesign.tencent.com/react/components/dialog)
 
 ### FormDialog.Footer
 

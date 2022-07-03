@@ -276,12 +276,8 @@ export default () => (
 
 ### Editable
 
-> 内联编辑
-
-参考 https://ant.design/components/form-cn/ 中的 FormItem 属性
-
 ### Editable.Popover
 
 > 浮层编辑
 
-参考 https://ant.design/components/popover-cn/
+参考 https://tdesign.tencent.com/react/components/popup?tab=api

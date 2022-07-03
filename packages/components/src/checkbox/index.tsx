@@ -8,7 +8,6 @@ import { PreviewText } from '../preview-text'
 
 type ComposedCheckbox = React.FC<CheckboxProps> & {
   Group?: React.FC<CheckboxGroupProps>
-  __ANT_CHECKBOX?: boolean
 }
 
 export const Checkbox: ComposedCheckbox = connect(

@@ -257,4 +257,4 @@ export default () => (
 
 ## API
 
-参考 https://ant.design/components/cascader-cn/
+参考 https://tdesign.tencent.com/react/components/cascader

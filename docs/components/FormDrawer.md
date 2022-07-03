@@ -313,7 +313,7 @@ interface FormDrawer {
 }
 ```
 
-`DrawerProps`类型定义参考 ant design [Drawer API](https://ant.design/components/drawer-cn/#API)
+`DrawerProps`类型定义参考 TDesign [Drawer API](https://tdesign.tencent.com/react/components/drawer)
 
 ### FormDrawer.Footer
 

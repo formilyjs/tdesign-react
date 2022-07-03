@@ -142,4 +142,4 @@ export default () => (
 
 ## API
 
-参考 https://ant.design/components/transfer-cn/
+参考 https://tdesign.tencent.com/react/components/transfer

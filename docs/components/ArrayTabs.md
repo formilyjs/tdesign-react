@@ -163,4 +163,4 @@ export default () => {
 
 ### ArrayTabs
 
-参考 https://ant.design/components/tabs-cn/
+参考 https://tdesign.tencent.com/react/components/tabs?tab=api

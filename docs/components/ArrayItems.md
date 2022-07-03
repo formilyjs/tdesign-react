@@ -718,8 +718,6 @@ export default () => {
 
 > 拖拽手柄
 
-参考 https://ant.design/components/icon-cn/
-
 ### ArrayItems.Addition
 
 > 添加按钮
@@ -732,7 +730,7 @@ export default () => {
 | method       | `'push' \| 'unshift'` | 添加方式 | `'push'` |
 | defaultValue | `any`                 | 默认值   |          |
 
-其余参考 https://ant.design/components/button-cn/
+其余参考 https://tdesign.tencent.com/react/components/button
 
 注意：title 属性可以接收 Field 模型中的 title 映射，也就是在 Field 上传 title 也是生效的
 
@@ -744,8 +742,6 @@ export default () => {
 | ------ | --------- | ---- | ------ |
 | title  | ReactText | 文案 |        |
 
-其余参考 https://ant.design/components/icon-cn/
-
 注意：title 属性可以接收 Field 模型中的 title 映射，也就是在 Field 上传 title 也是生效的
 
 ### ArrayItems.MoveDown
@@ -756,8 +752,6 @@ export default () => {
 | ------ | --------- | ---- | ------ |
 | title  | ReactText | 文案 |        |
 
-其余参考 https://ant.design/components/icon-cn/
-
 注意：title 属性可以接收 Field 模型中的 title 映射，也就是在 Field 上传 title 也是生效的
 
 ### ArrayItems.MoveUp
@@ -767,8 +761,6 @@ export default () => {
 | 属性名 | 类型      | 描述 | 默认值 |
 | ------ | --------- | ---- | ------ |
 | title  | ReactText | 文案 |        |
-
-其余参考 https://ant.design/components/icon-cn/
 
 注意：title 属性可以接收 Field 模型中的 title 映射，也就是在 Field 上传 title 也是生效的
 
