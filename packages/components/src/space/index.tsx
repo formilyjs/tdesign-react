@@ -10,7 +10,7 @@ export const Space: React.FC<SpaceProps> = (props) => {
     size: props.size ?? layout?.spaceGap,
     ...props,
     // https://github.com/Tencent/tdesign-react/pull/1009
-    children: toArray(props.children),
+    children: toArray(props.children) as any,
   })
 }
 

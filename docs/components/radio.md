@@ -7,7 +7,6 @@
 ```tsx
 import React from 'react'
 import {
-  Input,
   Radio,
   FormItem,
   FormButtonGroup,

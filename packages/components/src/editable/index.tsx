@@ -131,7 +131,7 @@ export const Editable: ComposedEditable = observer((props) => {
   )
 })
 
-Editable.Popover = observer((props) => {
+Editable.Popover = observer((props: any) => {
   const field = useField<Field>()
   const pattern = useParentPattern()
   const [visible, setVisible] = useState(false)

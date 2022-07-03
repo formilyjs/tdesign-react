@@ -28,7 +28,7 @@ export const DatePicker: ComposedDatePicker = connect(
 
 DatePicker.RangePicker = connect(
   DateRangePicker,
-  mapProps((props, field) => {
+  mapProps((props) => {
     return {
       ...props,
       // 处理 date-picker 值为 undefined 时报错的问题

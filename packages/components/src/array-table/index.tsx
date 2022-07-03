@@ -25,7 +25,7 @@ import { ArrayBase, ArrayBaseMixins } from '../array-base'
 
 interface ObservableColumnSource {
   field: GeneralField
-  columnProps: ColumnProps<any>
+  columnProps: any
   schema: Schema
   display: FieldDisplayTypes
   name: string
@@ -45,7 +45,7 @@ interface IStatusSelectProps extends SelectProps {
 
 type ComposedArrayTable = React.FC<TableProps> &
   ArrayBaseMixins & {
-    Column?: React.FC<ColumnProps<any>>
+    Column?: React.FC<any>
   }
 const { Option } = Select
 
@@ -156,7 +156,7 @@ const schedulerRequest = {
 }
 
 const StatusSelect: React.FC<IStatusSelectProps> = observer(
-  (props) => {
+  (props: IStatusSelectProps) => {
     const field = useField<ArrayField>()
     const prefixCls = usePrefixCls('formily-array-table')
     const errors = field.errors
@@ -249,22 +249,24 @@ const ArrayTablePagination: React.FC<IArrayTablePaginationProps> = (props) => {
     return (
       <div className={`${prefixCls}-pagination`}>
         <Space>
-          <StatusSelect
-            value={current}
-            pageSize={pageSize}
-            onChange={handleChange}
-            options={pages}
-          />
-          <Pagination
-            {...props}
-            pageSize={pageSize}
-            current={current}
-            total={data.length}
-            showPageNumber={false}
-            onChange={(pageInfo) => {
-              handleChange(pageInfo.current)
-            }}
-          />
+          <>
+            <StatusSelect
+              value={current}
+              pageSize={pageSize}
+              onChange={handleChange}
+              options={pages}
+            />
+            <Pagination
+              {...props}
+              pageSize={pageSize}
+              current={current}
+              total={data.length}
+              showPageNumber={false}
+              onChange={(pageInfo) => {
+                handleChange(pageInfo.current)
+              }}
+            />
+          </>
         </Space>
       </div>
     )

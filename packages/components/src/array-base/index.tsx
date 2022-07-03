@@ -7,7 +7,6 @@ import {
   AddIcon,
   ViewListIcon,
   IconProps,
-  IconFont,
 } from 'tdesign-icons-react'
 import { ArrayField } from '@formily/core'
 import {

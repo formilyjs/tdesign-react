@@ -34,6 +34,7 @@ export interface IFormLayoutProps {
   spaceGap?: number
   gridColumnGap?: number
   gridRowGap?: number
+  children?: React.ReactNode
 }
 
 export interface IFormLayoutContext
@@ -65,7 +66,7 @@ export const FormLayout: React.FC<IFormLayoutProps> & {
   useFormLayout: () => IFormLayoutContext
   useFormDeepLayout: () => IFormLayoutContext
   useFormShallowLayout: () => IFormLayoutContext
-} = ({ shallow, children, prefixCls, className, style, ...otherProps }) => {
+} = ({ shallow, children, className, style, ...otherProps }) => {
   const { ref, props } = useResponsiveFormLayout(otherProps)
   const deepLayout = useFormDeepLayout()
   const formPrefixCls = usePrefixCls('form')

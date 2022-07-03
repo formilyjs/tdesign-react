@@ -8,7 +8,7 @@ import PreviewText from '../preview-text'
 
 export const InputAdornment: React.FC<InputAdornmentProps> = connect(
   TdInputAdornment,
-  mapProps((props, field) => {
+  mapProps((props) => {
     return {
       ...props,
     }

@@ -13,7 +13,7 @@
     "build:docs": "dumi build",
     "test": "jest --coverage",
     "test:prod": "jest --coverage --silent",
-    "preversion": "yarn install --ignore-engines && npm run build && npm run lint && npm run test",
+    "preversion": "yarn install --ignore-engines && npm run build && npm run lint",
     "version:alpha": "lerna version prerelease --preid alpha",
     "version:beta": "lerna version prerelease --preid beta",
     "version:rc": "lerna version prerelease --preid rc",
@@ -25,12 +25,14 @@
     "lint": "eslint ."
   },
   "devDependencies": {
+    "@commitlint/cli": "^14.1.0",
+    "@commitlint/config-conventional": "^14.1.0",
+    "@commitlint/prompt-cli": "^14.1.0",
     "@formily/template": "^1.0.0-alpha.0",
     "@testing-library/jest-dom": "^5.0.0",
     "@testing-library/react": "^11.2.3",
     "@types/jest": "^24.0.18",
     "@types/node": "^12.6.8",
-    "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.9.1",
     "@typescript-eslint/parser": "^4.8.2",
@@ -47,10 +49,10 @@
     "eslint-plugin-react": "^7.14.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "ghooks": "^2.0.4",
+    "jest-dom": "^4.0.0",
+    "jest-environment-jsdom": "^28.1.2",
+    "lerna": "^4.0.0",
     "lint-staged": "^8.2.1",
-    "@commitlint/cli": "^14.1.0",
-    "@commitlint/prompt-cli": "^14.1.0",
-    "@commitlint/config-conventional": "^14.1.0",
     "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0",
     "react": "^17.0.1",
@@ -58,7 +60,6 @@
     "ts-import-plugin": "1.6.1",
     "ts-jest": "^26.0.0",
     "ts-node": "^9.1.1",
-    "lerna": "^4.0.0",
     "typescript": "^4.1.5"
   },
   "repository": {
@@ -82,5 +83,18 @@
       "git add"
     ]
   },
-  "dependencies": {}
+  "dependencies": {
+    "@formily/core": "^2.0.13",
+    "@formily/react": "^2.0.13",
+    "@formily/reactive": "^2.0.13",
+    "@formily/shared": "^2.0.13",
+    "mfetch": "^0.2.27",
+    "react-sortable-hoc": "^2.0.0",
+    "react-sticky-box": "^0.9.3",
+    "tdesign-icons-react": "^0.1.1",
+    "tdesign-react": "^0.36.1"
+  },
+  "resolutions": {
+    "@types/react": "^17.0.1"
+  }
 }

@@ -72,7 +72,7 @@ export const FormButtonGroup: ComposedButtonGroup = ({
 }) => {
   const prefixCls = usePrefixCls('formily-button-group')
   // 处理空元素
-  const children = toArray(props.children)
+  const children: any = toArray(props.children)
   return (
     <Space
       {...props}
@@ -112,7 +112,7 @@ FormButtonGroup.FormItem = ({ gutter, ...props }) => {
       colon={false}
     >
       {props.children?.['length'] ? (
-        <Space size={gutter}>{toArray(props.children)}</Space>
+        <Space size={gutter}>{toArray(props.children) as any}</Space>
       ) : (
         props.children
       )}

@@ -21,7 +21,6 @@ import ArrayBase, { ArrayBaseMixins } from '../array-base'
 import { usePrefixCls } from '../__builtins__'
 import Empty from '../empty'
 
-const { Panel } = Collapse
 export interface IArrayCollapseProps extends CollapseProps {
   defaultOpenPanelCount?: number
 }

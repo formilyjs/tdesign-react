@@ -137,7 +137,6 @@ export const BaseItem: React.FC<IFormItemProps> = ({ children, ...props }) => {
     fullness,
     feedbackLayout,
     feedbackIcon,
-    getPopupContainer,
     inset,
     bordered = true,
     labelWidth,
@@ -242,10 +241,14 @@ export const BaseItem: React.FC<IFormItemProps> = ({ children, ...props }) => {
     if (tooltip && tooltipLayout === 'icon' && !overflow) {
       return (
         <span className={`${prefixCls}-label-tooltip-icon`}>
-          <Tooltip style={{
-            display: 'flex',
-            alignItems: 'center'
-          }} placement="top" content={tooltip}>
+          <Tooltip
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+            }}
+            placement="top"
+            content={tooltip}
+          >
             <span>{tooltipIcon}</span>
             {/* {tooltipIcon} */}
           </Tooltip>
