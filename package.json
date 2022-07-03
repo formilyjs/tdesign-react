@@ -31,6 +31,7 @@
     "@formily/template": "^1.0.0-alpha.0",
     "@testing-library/jest-dom": "^5.0.0",
     "@testing-library/react": "^11.2.3",
+    "jest": ">=25 <26",
     "@types/jest": "^24.0.18",
     "@types/node": "^12.6.8",
     "@types/react-dom": "^17.0.0",
