@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.0-beta.4(2022-07-04)
+
+### No Change Log
+
 ## v1.0.0-beta.3(2022-07-04)
 
 ### :bug: Bug Fixes
