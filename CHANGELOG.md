@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.0-beta.7(2022-07-05)
+
+### :bug: Bug Fixes
+
+1. [fix: npm 依赖](https://github.com/formilyjs/tdesign-react/commit/bda2c9d) :point_right: ( [zfitness](https://github.com/zfitness) )
+
 ## v1.0.0-beta.6(2022-07-04)
 
 ### No Change Log
