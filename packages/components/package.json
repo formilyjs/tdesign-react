@@ -1,6 +1,6 @@
 {
   "name": "@formily/tdesign-react",
-  "version": "1.0.0-beta.6",
+  "version": "1.0.0-beta.7",
   "license": "MIT",
   "main": "lib",
   "types": "lib/index.d.ts",
@@ -36,34 +36,34 @@
     "access": "public"
   },
   "peerDependencies": {
-    "moment": "^2.29.3",
-    "react": ">=16.8.0 || >=17.0.0",
-    "react-dom": ">=16.8.0",
-    "react-is": ">=16.8.0 || >=17.0.0",
-    "tdesign-icons-react": "^0.1.1",
-    "tdesign-react": "^0.36.2",
     "@formily/core": "^2.1.9",
     "@formily/grid": "^2.1.9",
     "@formily/json-schema": "2.1.9",
     "@formily/react": "^2.1.9",
     "@formily/reactive": "^2.1.9",
     "@formily/reactive-react": "^2.1.9",
-    "@formily/shared": "^2.1.9"
+    "@formily/shared": "^2.1.9",
+    "moment": "^2.29.3",
+    "react": ">=16.8.0 || >=17.0.0",
+    "react-dom": ">=16.8.0",
+    "react-is": ">=16.8.0 || >=17.0.0",
+    "tdesign-icons-react": "^0.1.1",
+    "tdesign-react": "^0.36.2"
   },
   "devDependencies": {
-    "moment": "^2.29.3",
-    "react": ">=16.8.0 || >=17.0.0",
-    "react-dom": ">=16.8.0",
-    "react-is": ">=16.8.0 || >=17.0.0",
-    "tdesign-icons-react": "^0.1.1",
-    "tdesign-react": "^0.36.2",
     "@formily/core": "^2.1.9",
     "@formily/grid": "^2.1.9",
     "@formily/json-schema": "2.1.9",
     "@formily/react": "^2.1.9",
     "@formily/reactive": "^2.1.9",
     "@formily/reactive-react": "^2.1.9",
-    "@formily/shared": "^2.1.9"
+    "@formily/shared": "^2.1.9",
+    "moment": "^2.29.3",
+    "react": ">=16.8.0 || >=17.0.0",
+    "react-dom": ">=16.8.0",
+    "react-is": ">=16.8.0 || >=17.0.0",
+    "tdesign-icons-react": "^0.1.1",
+    "tdesign-react": "^0.36.2"
   },
   "dependencies": {
     "classnames": "^2.3.1",
