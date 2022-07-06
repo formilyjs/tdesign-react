@@ -4,4 +4,7 @@ export const BuilderConfig: IBuilderConfig = {
   targetLibName: 'tdesign-react',
   targetLibCjsDir: 'lib',
   targetLibEsDir: 'es',
+  externals: {
+    'tdesign-react': 'TdesignReact',
+  },
 }

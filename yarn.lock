@@ -775,10 +775,10 @@
     pascal-case "^3.1.1"
     upper-case "^2.0.1"
 
-"@formily/template@^1.0.0-alpha.0":
-  version "1.0.0-alpha.20"
-  resolved "https://registry.npmmirror.com/@formily/template/-/template-1.0.0-alpha.20.tgz#80bbdf6b2993922dc021d367d2c855de7a31d633"
-  integrity sha512-UCuShaU9fs0f/g4Gt4vK0GkLHKgdvfD5Z0XwxGl9pdbPNIrAJMmLVR/l2tidgWgz8+2Srd7/b1Zc9iqGWcVaIQ==
+"@formily/template@^1.0.0-alpha.21":
+  version "1.0.0-alpha.21"
+  resolved "https://mirrors.tencent.com/npm/@formily%2ftemplate/-/template-1.0.0-alpha.21.tgz#46f2c9701ba033f319d700247ff839fe20670dda"
+  integrity sha512-liqTJ0o8i4pNd/X3umm/np+GOdwyT8ED+zbcmcUB8OXQCFjy4jwdSIbZ40uMtRxcxt0e4sybYZzVADF63qMdEw==
   dependencies:
     "@rollup/plugin-commonjs" "^17.0.0"
     ejs "^3.1.6"
@@ -797,6 +797,7 @@
     rollup-plugin-dts "^2.0.0"
     rollup-plugin-external-globals "^0.6.1"
     rollup-plugin-ignore-import "^1.3.2"
+    rollup-plugin-import-css "^3.0.3"
     rollup-plugin-inject-process-env "^1.3.1"
     rollup-plugin-node-resolve "^5.2.0"
     rollup-plugin-postcss "^4.0.0"
@@ -2003,7 +2004,7 @@
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
 
-"@rollup/pluginutils@^4.0.0", "@rollup/pluginutils@^4.1.0":
+"@rollup/pluginutils@^4.0.0", "@rollup/pluginutils@^4.1.0", "@rollup/pluginutils@^4.2.0":
   version "4.2.1"
   resolved "https://registry.npmmirror.com/@rollup/pluginutils/-/pluginutils-4.2.1.tgz#e6c6c3aba0744edce3fb2074922d3776c0af2a6d"
   integrity sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==
@@ -3611,9 +3612,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001358:
-  version "1.0.30001359"
-  resolved "https://registry.npmmirror.com/caniuse-lite/-/caniuse-lite-1.0.30001359.tgz#a1c1cbe1c2da9e689638813618b4219acbd4925e"
-  integrity sha512-Xln/BAsPzEuiVLgJ2/45IaqD9jShtk3Y33anKb4+yLwQzws3+v6odKfpgES/cDEaZMLzSChpIGdbOYtH9MyuHw==
+  version "1.0.30001363"
+  resolved "https://mirrors.tencent.com/npm/caniuse-lite/-/caniuse-lite-1.0.30001363.tgz"
+  integrity sha512-HpQhpzTGGPVMnCjIomjt+jvyUu8vNFo3TaDiZ/RcoTrlOq/5+tC8zHdsbgFB6MxmaY+jCpsH09aD80Bb4Ow3Sg==
 
 capture-exit@^2.0.0:
   version "2.0.0"
@@ -11528,6 +11529,13 @@ rollup-plugin-ignore-import@^1.3.2:
   resolved "https://registry.npmmirror.com/rollup-plugin-ignore-import/-/rollup-plugin-ignore-import-1.3.2.tgz#5379eac73d2c7e389ebeb5b3a90ae4c15c15e6c8"
   integrity sha512-q7yH2c+PKVfb61+MTXqqyBHIgflikumC7OEB+OfQWNsSmDqE5FLZLeewcBGl1VDmjDjSXuALXsaBjyIsl3oNmQ==
 
+rollup-plugin-import-css@^3.0.3:
+  version "3.0.3"
+  resolved "https://mirrors.tencent.com/npm/rollup-plugin-import-css/-/rollup-plugin-import-css-3.0.3.tgz#603c96e5ca55a8b1a1fda94221189f3224532fcf"
+  integrity sha512-0JE1UVigYqhbbbwNalxcYCnYAD70JgJIqnaSYeBgCOO60ASx9hpJubfA8toxEv6ceZrRPnLF1cnr0vsskH1Uiw==
+  dependencies:
+    "@rollup/pluginutils" "^4.2.0"
+
 rollup-plugin-inject-process-env@^1.3.1:
   version "1.3.1"
   resolved "https://registry.npmmirror.com/rollup-plugin-inject-process-env/-/rollup-plugin-inject-process-env-1.3.1.tgz#2d7660fe76f2b221b976cb35597763ffcaad3db3"
@@ -11593,10 +11601,10 @@ rollup-pluginutils@^2.8.1, rollup-pluginutils@^2.8.2:
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^2.37.1:
-  version "2.75.7"
-  resolved "https://registry.npmmirror.com/rollup/-/rollup-2.75.7.tgz#221ff11887ae271e37dcc649ba32ce1590aaa0b9"
-  integrity sha512-VSE1iy0eaAYNCxEXaleThdFXqZJ42qDBatAwrfnPlENEZ8erQ+0LYX4JXOLPceWfZpV1VtZwZ3dFCuOZiSyFtQ==
+rollup@2.60.2, rollup@^2.37.1:
+  version "2.60.2"
+  resolved "https://mirrors.tencent.com/npm/rollup/-/rollup-2.60.2.tgz#3f45ace36a9b10b4297181831ea0719922513463"
+  integrity sha512-1Bgjpq61sPjgoZzuiDSGvbI1tD91giZABgjCQBKM5aYLnzjq52GoDuWVwT/cm/MCxCMPU8gqQvkj8doQ5C8Oqw==
   optionalDependencies:
     fsevents "~2.3.2"
 

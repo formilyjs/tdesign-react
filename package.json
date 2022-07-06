@@ -28,7 +28,7 @@
     "@commitlint/cli": "^14.1.0",
     "@commitlint/config-conventional": "^14.1.0",
     "@commitlint/prompt-cli": "^14.1.0",
-    "@formily/template": "^1.0.0-alpha.0",
+    "@formily/template": "^1.0.0-alpha.21",
     "@testing-library/jest-dom": "^5.0.0",
     "@testing-library/react": "^11.2.3",
     "@types/jest": "^24.0.18",
@@ -95,6 +95,7 @@
     "tdesign-react": "^0.36.1"
   },
   "resolutions": {
-    "@types/react": "^17.0.1"
+    "@types/react": "^17.0.1",
+    "rollup": "2.60.2"
   }
 }
