@@ -29,10 +29,6 @@ The Awesome Components Library with Formily & TDesign.
 - 🏅 Side effects are managed independently, making form data linkages easier than ever before.
 - 🌯 Override most complicated form layout use cases.
 
-## Form Builder
-
-![https://designable-antd.formilyjs.org/](https://img.alicdn.com/imgextra/i3/O1CN01xAJj1y1wcGzXYc1Uq_!!6000000006328-2-tps-2980-1740.png)
-
 ## WebSite
 
 https://tdesign-react.formilyjs.org

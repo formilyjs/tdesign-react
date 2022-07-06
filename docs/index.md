@@ -31,3 +31,9 @@ $ npm install --save tdesign-react moment
 $ npm install --save @formily/core @formily/react @formily/tdesign-react
 
 ```
+
+## 导入 css
+
+```ts | pure
+import '@formily/tdesign-react/dist/tdesign-react.css'
+```
