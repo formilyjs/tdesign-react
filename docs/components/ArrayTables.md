@@ -8,29 +8,23 @@
 
 > 由于目前 tdesign 的 table 暂时不支持设置 rowKey 为一个函数，所以需要为数据制定一个唯一的 key， 这个 key 不能是表单项的 name, table 内部会用数据项的 index 作为 key 的值。
 
-```tsx | pure
-<SchemaField.Array
-  name="array"
-  x-decorator="FormItem"
-  x-component="ArrayTable"
-  x-component-props={{
-   rowKey: 'rowKey',
-  }}
->
+```html | pure
+<SchemaField.Array name="array" x-decorator="FormItem" x-component="ArrayTable"
+x-component-props={{ rowKey: 'rowKey', }} />
 ```
 
 ## 排序
 
 > 制定 Column 的 dataIndex 字段为 drag, ArrayTable.SortHandle 只是一个默认图标，可以替换
 
-```tsx | pure
+```html
 <SchemaField.Void
   x-component="ArrayTable.Column"
   x-component-props={{
     width: 80,
     title: 'Sort',
     dataIndex: 'drag',
-    align: 'center',
+    align: 'center'
   }}
 >
   <SchemaField.Void
