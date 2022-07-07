@@ -92,7 +92,7 @@
     "react-sortable-hoc": "^2.0.0",
     "react-sticky-box": "^0.9.3",
     "tdesign-icons-react": "^0.1.1",
-    "tdesign-react": "^0.36.1"
+    "tdesign-react": "^0.36.3"
   },
   "resolutions": {
     "@types/react": "^17.0.1",

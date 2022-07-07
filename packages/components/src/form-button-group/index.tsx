@@ -10,7 +10,6 @@ import { BaseItem, IFormItemProps } from '../form-item'
 import { usePrefixCls } from '../__builtins__'
 import cls from 'classnames'
 import { Space, SpaceProps } from 'tdesign-react'
-import toArray from 'rc-util/lib/Children/toArray'
 interface IStickyProps {
   offsetTop?: number
   offsetBottom?: number
@@ -68,11 +67,11 @@ function getDefaultBackground() {
 export const FormButtonGroup: ComposedButtonGroup = ({
   align,
   gutter,
+  children,
   ...props
 }) => {
   const prefixCls = usePrefixCls('formily-button-group')
   // 处理空元素
-  const children: any = toArray(props.children)
   return (
     <Space
       {...props}
@@ -111,11 +110,7 @@ FormButtonGroup.FormItem = ({ gutter, ...props }) => {
       }}
       colon={false}
     >
-      {props.children?.['length'] ? (
-        <Space size={gutter}>{toArray(props.children) as any}</Space>
-      ) : (
-        props.children
-      )}
+      <Space size={gutter}>{props.children}</Space>
     </BaseItem>
   )
 }
