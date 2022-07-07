@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.0.0-beta.11(2022-07-07)
+
+### :tada: Enhancements
+
+1. [feat: 移除 rc-util](https://github.com/formilyjs/tdesign-react/commit/0cf9196) :point_right: ( [zfitness](https://github.com/zfitness) )
+
+### :memo: Documents Changes
+
+1. [docs: space](https://github.com/formilyjs/tdesign-react/commit/566a084) :point_right: ( [zfitness](https://github.com/zfitness) )
+
 ## v1.0.0-beta.10(2022-07-06)
 
 ### :tada: Enhancements
