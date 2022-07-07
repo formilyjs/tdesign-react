@@ -4,6 +4,43 @@
 >
 > 注意：该组件只适用于 Schema 场景，且只能是对象数组
 
+## 自增主键处理
+
+> 由于目前 tdesign 的 table 暂时不支持设置 rowKey 为一个函数，所以需要为数据制定一个唯一的 key， 这个 key 不能是表单项的 name, table 内部会用数据项的 index 作为 key 的值。
+
+```tsx | pure
+<SchemaField.Array
+  name="array"
+  x-decorator="FormItem"
+  x-component="ArrayTable"
+  x-component-props={{
+   rowKey: 'rowKey',
+  }}
+>
+```
+
+## 排序
+
+> 制定 Column 的 dataIndex 字段为 drag, ArrayTable.SortHandle 只是一个默认图标，可以替换
+
+```tsx | pure
+<SchemaField.Void
+  x-component="ArrayTable.Column"
+  x-component-props={{
+    width: 80,
+    title: 'Sort',
+    dataIndex: 'drag',
+    align: 'center',
+  }}
+>
+  <SchemaField.Void
+    x-decorator="FormItem"
+    required
+    x-component="ArrayTable.SortHandle"
+  />
+</SchemaField.Void>
+```
+
 ## Markup Schema 案例
 
 ```tsx
@@ -31,10 +68,7 @@ const SchemaField = createSchemaField({
 
 const form = createForm()
 
-const range = (count: number) =>
-  Array.from(new Array(count)).map((_, key) => ({
-    rowKey: key,
-  }))
+const range = (count: number) => Array.from(new Array(count))
 
 export default () => {
   return (
@@ -45,8 +79,7 @@ export default () => {
           x-decorator="FormItem"
           x-component="ArrayTable"
           x-component-props={{
-            pagination: { pageSize: 10 },
-            scroll: { x: '100%' },
+            rowKey: 'rowKey',
           }}
         >
           <SchemaField.Object>
@@ -97,7 +130,7 @@ export default () => {
             >
               <SchemaField.String
                 x-decorator="FormItem"
-                name="rowKey"
+                name="a2"
                 x-component="Input"
               />
             </SchemaField.Void>
@@ -139,7 +172,7 @@ export default () => {
           block
           onClick={() => {
             form.setValues({
-              array: range(8),
+              array: range(10000),
             })
           }}
         >
@@ -149,7 +182,6 @@ export default () => {
       <Alert
         style={{ marginTop: 10 }}
         message="注意：开启formily插件的页面，因为后台有数据通信，会占用浏览器算力，最好在无痕模式(无formily插件)下测试"
-        type="warning"
       />
     </FormProvider>
   )

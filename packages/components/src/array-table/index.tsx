@@ -261,7 +261,7 @@ const ArrayTablePagination: React.FC<IArrayTablePaginationProps> = (props) => {
               pageSize={pageSize}
               current={current}
               total={data.length}
-              showPageNumber={false}
+              showPageSize={false}
               onChange={(pageInfo) => {
                 handleChange(pageInfo.current)
               }}
@@ -286,14 +286,14 @@ export const ArrayTable: ComposedArrayTable = observer((props: TableProps) => {
   const ref = useRef<HTMLDivElement>()
   const field = useField<ArrayField>()
   const prefixCls = usePrefixCls('formily-array-table')
-  const data = Array.isArray(field.value) ? field.value.slice() : []
+  const rowKey = props.rowKey || 'id'
+  const data = Array.isArray(field.value)
+    ? field.value.map((item, index) => ({ [rowKey]: index, ...item }))
+    : []
   const sources = useArrayTableSources()
   const columns = useArrayTableColumns(data, sources)
   const pagination = isBool(props.pagination) ? {} : props.pagination
   const addition = useAddition()
-  // const defaultRowKey = (record: any) => {
-  //   return data.indexOf(record)
-  // }
 
   return (
     <ArrayTablePagination {...pagination} data={data}>
@@ -301,19 +301,18 @@ export const ArrayTable: ComposedArrayTable = observer((props: TableProps) => {
         <div ref={ref} className={prefixCls}>
           <ArrayBase>
             <Table
+              {...props}
               size="medium"
-              // tableLayout="fixed"
-              // verticalAlign="middle"
-              // size="small"
-              rowKey="rowKey"
+              rowKey={rowKey}
               disableDataPage={false}
               columns={columns}
               data={_data}
+              footData={[{}]}
               dragSort="row-handler"
               onDragSort={({ currentIndex, targetIndex }) => {
                 field.move(currentIndex, targetIndex)
               }}
-              {...props}
+              pagination={null}
             />
             <div style={{ marginTop: 5, marginBottom: 5 }}>{pager}</div>
 
