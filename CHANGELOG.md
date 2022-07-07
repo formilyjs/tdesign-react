@@ -1,5 +1,55 @@
 # Changelog
 
+# <<<<<<< HEAD
+
+## v1.0.0-beta.11(2022-07-07)
+
+### :tada: Enhancements
+
+1. [feat: 移除 rc-util](https://github.com/formilyjs/tdesign-react/commit/0cf9196) :point_right: ( [zfitness](https://github.com/zfitness) )
+
+### :memo: Documents Changes
+
+1. [docs: space](https://github.com/formilyjs/tdesign-react/commit/566a084) :point_right: ( [zfitness](https://github.com/zfitness) )
+
+## v1.0.0-beta.10(2022-07-06)
+
+### :tada: Enhancements
+
+1. [feat: merge](https://github.com/formilyjs/tdesign-react/commit/b9632f6) :point_right: ( [zfitness](https://github.com/zfitness) )
+
+### :memo: Documents Changes
+
+1. [docs: readme](https://github.com/formilyjs/tdesign-react/commit/c9fcaed) :point_right: ( [zfitness](https://github.com/zfitness) )
+
+1. [docs: 文档](https://github.com/formilyjs/tdesign-react/commit/df0cd8e) :point_right: ( [zfitness](https://github.com/zfitness) )
+
+## v1.0.0-beta.9(2022-07-06)
+
+### :tada: Enhancements
+
+1. [feat: 升级 template 脚手架](https://github.com/formilyjs/tdesign-react/commit/122af54) :point_right: ( [zfitness](https://github.com/zfitness) )
+
+1. [feat: 样式优化](https://github.com/formilyjs/tdesign-react/commit/a86acff) :point_right: ( [zfitness](https://github.com/zfitness) )
+
+## v1.0.0-beta.8(2022-07-05)
+
+### :tada: Enhancements
+
+1. [feat: npm 依赖](https://github.com/formilyjs/tdesign-react/commit/22d5791) :point_right: ( [zfitness](https://github.com/zfitness) )
+
+## v1.0.0-beta.7(2022-07-05)
+
+### :bug: Bug Fixes
+
+1. [fix: npm 依赖](https://github.com/formilyjs/tdesign-react/commit/bda2c9d) :point_right: ( [zfitness](https://github.com/zfitness) )
+
+## v1.0.0-beta.6(2022-07-04)
+
+### No Change Log
+
+> > > > > > > 1f2b55a95de82cc71138df5ced5fb00aacbaafbf
+
 ## v1.0.0-beta.5(2022-07-04)
 
 ### No Change Log
