@@ -30,7 +30,7 @@ jobs:
     #     key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
     #     restore-keys: | 
     #       ${{ runner.os }}-yarn-    
-    - run: yarn install && yarn build  
+    - run: yarn install && yarn build:docs
     # 上传打包好的文件，所以下一步可以使用
     - name: upload files 
       uses: actions/upload-artifact@v2
