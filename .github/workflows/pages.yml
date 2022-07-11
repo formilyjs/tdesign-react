@@ -24,7 +24,7 @@ jobs:
 
       # 部署到 GitHub Pages
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: JamesIves/github-pages-deploy-action@releases/v2
         with:
           ACCESS_TOKEN: ${{ secrets.PAGE_TOKEN }}
           BRANCH: gh-pages
