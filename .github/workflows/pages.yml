@@ -35,8 +35,8 @@ jobs:
     - name: upload files 
       uses: actions/upload-artifact@v2
       with: 
-        name: build-pages
-        path: build
+        name: doc-site
+        path: doc-site
         retention-days: 1
   Deploy: 
     needs: Build # 确保build 阶段完成
@@ -47,8 +47,8 @@ jobs:
       - name: download build files
         uses: actions/download-artifact@v2
         with:
-          name: build-pages
-          path: build
+          name: doc-site
+          path: doc-site
       - name: deploy
         uses: JamesIves/github-pages-deploy-action@v4.2.3
         with:
