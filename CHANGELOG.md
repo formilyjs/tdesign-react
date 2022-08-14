@@ -1,5 +1,21 @@
 # Changelog
 
+## v1.0.0-beta.13(2022-08-14)
+
+### :tada: Enhancements
+
+1. [feat: 添加@formily/grid、moment 包](https://github.com/formilyjs/tdesign-react/commit/9e0991d) :point_right: ( [yongfenli](https://github.com/yongfenli) )
+
+1. [feat: merge](https://github.com/formilyjs/tdesign-react/commit/5d668b0) :point_right: ( [zfitness](https://github.com/zfitness) )
+
+1. [feat: github pages](https://github.com/formilyjs/tdesign-react/commit/c4d4882) :point_right: ( [zfitness](https://github.com/zfitness) )
+
+### :bug: Bug Fixes
+
+1. [fix: 有错误文案和没有错误文案，高度不一致，会有高度跳变 #12](https://github.com/formilyjs/tdesign-react/commit/3ee7ecb) :point_right: ( [yongfenli](https://github.com/yongfenli) )
+
+1. [fix: 修复 InputNumber 组件校验出错时出现红色背景，#11](https://github.com/formilyjs/tdesign-react/commit/feb52d3) :point_right: ( [yongfenli](https://github.com/yongfenli) )
+
 ## v1.0.0-beta.12(2022-07-07)
 
 ### :tada: Enhancements
