@@ -60,7 +60,7 @@
 ## 安装
 
 ```bash
-$ npm install --save tdesign-react moment
+$ npm install --save tdesign-react dayjs
 $ npm install --save @formily/core @formily/react @formily/tdesign-react
 
 ```
