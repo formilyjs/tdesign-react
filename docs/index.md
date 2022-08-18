@@ -27,7 +27,7 @@ footer: Open-source MIT Licensed | Copyright © 2019-present<br />Powered by sel
 ## 安装
 
 ```bash
-$ npm install --save tdesign-react moment
+$ npm install --save tdesign-react dayjs
 $ npm install --save @formily/core @formily/react @formily/tdesign-react
 
 ```

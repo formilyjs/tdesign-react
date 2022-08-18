@@ -36,32 +36,32 @@
     "access": "public"
   },
   "peerDependencies": {
-    "@formily/core": "^2.1.9",
-    "@formily/react": "^2.1.9",
-    "@formily/reactive": "^2.1.9",
-    "moment": "^2.29.3",
+    "@formily/core": "^2.2.0",
+    "@formily/react": "^2.2.0",
+    "@formily/reactive": "^2.2.0",
     "react": ">=16.8.0 || >=17.0.0",
     "react-dom": ">=16.8.0",
     "react-is": ">=16.8.0 || >=17.0.0",
     "tdesign-icons-react": "^0.1.1",
-    "tdesign-react": "^0.36.3"
+    "tdesign-react": "^0.36.3",
+    "dayjs": "^1.11.5"
   },
   "devDependencies": {
-    "@formily/core": "^2.1.9",
-    "@formily/react": "^2.1.9",
-    "@formily/reactive": "^2.1.9",
-    "moment": "^2.29.3",
+    "@formily/core": "^2.2.0",
+    "@formily/react": "^2.2.0",
+    "@formily/reactive": "^2.2.0",
     "react": ">=16.8.0 || >=17.0.0",
     "react-dom": ">=16.8.0",
     "react-is": ">=16.8.0 || >=17.0.0",
     "tdesign-icons-react": "^0.1.1",
-    "tdesign-react": "^0.36.3"
+    "tdesign-react": "^0.36.3",
+    "dayjs": "^1.11.5"
   },
   "dependencies": {
-    "@formily/grid": "^2.1.9",
-    "@formily/json-schema": "2.1.9",
-    "@formily/reactive-react": "^2.1.9",
-    "@formily/shared": "^2.1.9",
+    "@formily/grid": "^2.2.0",
+    "@formily/json-schema": "2.2.0",
+    "@formily/reactive-react": "^2.2.0",
+    "@formily/shared": "^2.2.0",
     "classnames": "^2.3.1",
     "react-sortable-hoc": "^2.0.0",
     "react-sticky-box": "^0.9.3"
