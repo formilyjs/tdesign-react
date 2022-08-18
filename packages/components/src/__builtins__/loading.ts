@@ -5,13 +5,10 @@ export const loading = async (
   processor: () => Promise<any>
 ) => {
   let ins = null
-  let loading = setTimeout(() => {
-    ins = MessagePlugin.loading(title)
-  }, 100)
+  ins = MessagePlugin.loading(title)
   try {
     return await processor()
   } finally {
     MessagePlugin.close(ins)
-    clearTimeout(loading)
   }
 }
