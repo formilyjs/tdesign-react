@@ -1,5 +1,21 @@
 # Changelog
 
+## v1.0.0-beta.15(2022-12-05)
+
+### :tada: Enhancements
+
+1. [feat: moment 转换为 dayjs](https://github.com/formilyjs/tdesign-react/commit/5ac264d) :point_right: ( [zhengmiao](https://github.com/zhengmiao) )
+
+### :bug: Bug Fixes
+
+1. [fix: loading](https://github.com/formilyjs/tdesign-react/commit/a1d6c81) :point_right: ( [zhengmiao](https://github.com/zhengmiao) )
+
+### :blush: Other Changes
+
+1. [chore: version](https://github.com/formilyjs/tdesign-react/commit/7130d2e) :point_right: ( [zfitness](https://github.com/zfitness) )
+
+1. [chore: 移除无用的包](https://github.com/formilyjs/tdesign-react/commit/07b3235) :point_right: ( [zhengmiao](https://github.com/zhengmiao) )
+
 ## v1.0.0-beta.13(2022-08-14)
 
 ### :tada: Enhancements
