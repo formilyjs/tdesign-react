@@ -1,6 +1,6 @@
 {
   "name": "@formily/tdesign-react",
-  "version": "1.0.0-beta.13",
+  "version": "1.0.0-alpha.0",
   "license": "MIT",
   "main": "lib",
   "types": "lib/index.d.ts",
@@ -39,23 +39,23 @@
     "@formily/core": "^2.2.0",
     "@formily/react": "^2.2.0",
     "@formily/reactive": "^2.2.0",
+    "dayjs": "^1.11.5",
     "react": ">=16.8.0 || >=17.0.0",
     "react-dom": ">=16.8.0",
     "react-is": ">=16.8.0 || >=17.0.0",
     "tdesign-icons-react": "^0.1.1",
-    "tdesign-react": "^0.36.3",
-    "dayjs": "^1.11.5"
+    "tdesign-react": "^0.36.3"
   },
   "devDependencies": {
     "@formily/core": "^2.2.0",
     "@formily/react": "^2.2.0",
     "@formily/reactive": "^2.2.0",
+    "dayjs": "^1.11.5",
     "react": ">=16.8.0 || >=17.0.0",
     "react-dom": ">=16.8.0",
     "react-is": ">=16.8.0 || >=17.0.0",
     "tdesign-icons-react": "^0.1.1",
-    "tdesign-react": "^0.36.3",
-    "dayjs": "^1.11.5"
+    "tdesign-react": "^0.36.3"
   },
   "dependencies": {
     "@formily/grid": "^2.2.0",
